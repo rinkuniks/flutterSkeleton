@@ -1,5 +1,7 @@
 import 'package:mvvm/data/response/status.dart';
 
+/// Created by Sawan Kumar on 12/05/23.
+
 class ApiResponse<T> {
   Status? status;
 

@@ -6,6 +6,9 @@ import 'package:mvvm/view/home_screen.dart';
 import 'package:mvvm/view/login_view.dart';
 import 'package:mvvm/view/signup_view.dart';
 
+/// Created by Sawan Kumar on 12/05/23.
+
+
 class Routes {
   static MaterialPageRoute generateRoute(RouteSettings settings) {
     switch (settings.name) {

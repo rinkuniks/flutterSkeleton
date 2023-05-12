@@ -8,6 +8,8 @@ import 'package:mvvm/utils/utils.dart';
 import 'package:mvvm/view_model/auth_view_model.dart';
 import 'package:provider/provider.dart';
 
+/// Created by Sawan Kumar on 12/05/23.
+
 class SignUpView extends StatefulWidget {
   const SignUpView({Key? key}) : super(key: key);
 

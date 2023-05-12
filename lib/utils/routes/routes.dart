@@ -6,6 +6,9 @@ import 'package:mvvm/view/splash_view.dart';
 
 import 'routes_name.dart';
 
+/// Created by Sawan Kumar on 12/05/23.
+
+
 class Routes {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
