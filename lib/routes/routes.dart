@@ -5,13 +5,17 @@ import 'package:mvvm/utils/routes/routes_name.dart';
 import 'package:mvvm/view/home_screen.dart';
 import 'package:mvvm/view/login_view.dart';
 import 'package:mvvm/view/signup_view.dart';
-
+import 'package:mvvm/view/intro.dart';
 /// Created by Sawan Kumar on 12/05/23.
 
 
 class Routes {
   static MaterialPageRoute generateRoute(RouteSettings settings) {
+    print(settings.name);
     switch (settings.name) {
+      case RoutesName.intor:
+      return MaterialPageRoute(
+            builder: (BuildContext context) => const Intro());
       case RoutesName.home:
         return MaterialPageRoute(
             builder: (BuildContext context) => const HomeScreen());

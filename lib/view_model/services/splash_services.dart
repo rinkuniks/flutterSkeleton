@@ -15,11 +15,15 @@ class SplashServices {
       print(value.token);
       if (value.token.toString() == null || value.token.toString() == '') {
         await Future.delayed(const Duration(seconds: 3));
-        Navigator.pushNamed(context, RoutesName.home);
+        print("1111-----------------------------");
+        Navigator.pushNamed(context, RoutesName.intor);
+         //       Navigator.pushNamed(context, RoutesName.home);
+
       } else {
         await Future.delayed(const Duration(seconds: 3));
-
-        Navigator.pushNamed(context, RoutesName.home);
+ print("1111-----------------------------2222");
+//  Navigator.pushNamed(context, RoutesName.home);
+        Navigator.pushNamed(context, RoutesName.intor);
       }
     }).onError((error, stackTrace) {
       if (kDebugMode) {

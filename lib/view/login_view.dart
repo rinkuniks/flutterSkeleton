@@ -2,13 +2,13 @@
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:mvvm/generated/assets.dart';
+import 'package:mvvm/res/components/AppTextField.dart';
 import 'package:mvvm/res/components/round_button.dart';
 import 'package:mvvm/utils/routes/routes_name.dart';
 import 'package:mvvm/utils/utils.dart';
 import 'package:mvvm/view_model/auth_view_model.dart';
 import 'package:provider/provider.dart';
-
-/// Created by Sawan Kumar on 12/05/23.
 
 class LoginView extends StatefulWidget {
   const LoginView({Key? key}) : super(key: key);
@@ -35,81 +35,141 @@ class _LoginViewState extends State<LoginView> {
     final authViewModel = Provider.of<AuthViewModel>(context);
     final height = MediaQuery.of(context).size.height * 1;
     return Scaffold(
-      appBar: AppBar(
-        title: Text('login'),
-        centerTitle: true,
-      ),
       body: SafeArea(
         child: Container(
-          color: Colors.white,
-          child: Column(
-            // mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              TextFormField(
-                controller: emailC,
-                keyboardType: TextInputType.emailAddress,
-                textInputAction: TextInputAction.next,
-                decoration: InputDecoration(
-                  hintText: 'Email',
-                  labelText: 'Email',
-                  prefixIcon: Icon(Icons.alternate_email),
-                ),
-              ),
-              ValueListenableBuilder(
-                valueListenable: _obsecurePassword,
-                builder: (context, value, child) => TextFormField(
-                  controller: passwordC,
-                  obscureText: _obsecurePassword.value,
-                  keyboardType: TextInputType.emailAddress,
-                  textInputAction: TextInputAction.done,
-                  decoration: InputDecoration(
-                      hintText: 'Password',
-                      labelText: 'Password',
-                      prefixIcon: Icon(Icons.lock),
-                      suffixIcon: InkWell(
-                          onTap: () => _obsecurePassword.value =
-                              !_obsecurePassword.value,
-                          child: Icon(_obsecurePassword.value
-                              ? Icons.visibility_off
-                              : Icons.visibility))),
-                ),
-              ),
-              SizedBox(
-                height: height * 0.050,
-              ),
-              RoundButton(
-                  title: 'Login',
-                  loading: authViewModel.loading,
-                  onPressed: () {
-                    if (emailC.text.isEmpty) {
-                      Utils.flushBarError('please Enter email', context);
-                    } else if (passwordC.text.isEmpty) {
-                      Utils.flushBarError('please Enter password', context);
-                    } else if (passwordC.text.length < 6) {
-                      Utils.flushBarError(
-                          'password length is less than 5', context);
-                    } else {
-                      Map data = {
-                        "email": emailC.text,
-                        "password": passwordC.text,
-                      };
+          height: MediaQuery.of(context).size.height,
+          //  color: Colors.black,
+          child: SingleChildScrollView(
+              child: Padding(
+                  padding: EdgeInsets.fromLTRB(25, 30, 25, 10),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      InkWell(
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
+                        child: Image.asset(
+                          R.back,
+                          height: 20,
+                          width: 20,
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(
+                            top: MediaQuery.of(context).size.height * 0.2),
+                        child: Center(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text(
+                                "Welcome back",
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 26),
+                              ),
+                              Container(
+                                margin: EdgeInsets.only(top: 10),
+                                child: const Text(
+                                  "Welcome to ExcelR, please enter your details to continue",
+                                  style: TextStyle(
+                                      color: Colors.grey, fontSize: 12),
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 20,
+                              ),
+                                /// input field for Email
+                              Container(
+                                margin: EdgeInsets.only(top: 10),
+                                child: Text(
+                                  'Email',
+                                  style: TextStyle(
+                                      color: Colors.grey,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w400),
+                                ),
+                              ),
+                              AppTextField(
+                                textInputAction: TextInputAction.next,
+                                validator: (input) {},
+                                // maxLength: limitLength,
+                                //fieldKey: _phoneNoFieldKey,
+                                // hintText: 'Email',
+                                onSaved: (input) => {},
+                                //  _phoneNo = input.toString()
 
-                      authViewModel.loginApi(data, context);
-                      authViewModel.setLoading(true);
-                      if (kDebugMode) {
-                        print('Abi Hit');
-                      }
-                    }
-                  }),
-              SizedBox(height: 20),
-              TextButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, RoutesName.signUp);
-                  },
-                  child: Text('Dont have an Account? Sign Up Here')),
-            ],
-          ),
+                                onChanged: (input) {
+                                  // if (Utility.isOnlyNumber(input.toString())) {
+                                  //   limitLength = 10;
+                                  // } else {
+                                  //   limitLength = 40;
+                                  // }
+                                  setState(() {});
+                                },
+                              ),
+                              const SizedBox(
+                                height: 15,
+                              ),
+                              /// input field for password 
+                              Container(
+                                margin: EdgeInsets.only(top: 10),
+                                child: Text(
+                                  'Password',
+                                  style: TextStyle(
+                                      color: Colors.grey,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w400),
+                                ),
+                              ),
+                              AppTextField(
+                                  textInputAction: TextInputAction.done,
+                                  validator: (input) {
+                                    // String? validatorString =
+                                    //     Validation.passwordValidator(input, context);
+
+                                    // if (validatorString.isNotEmpty) {
+                                    //   return validatorString;
+                                    // }
+                                    // return null;
+                                  },
+                                  // fieldKey: _passwordFieldKey,
+                                  //  hintText: 'Password',
+                                  obSecure: true,
+                                  isPassword: true,
+                                  onSaved: (input) => {}
+                                  //_password = input.toString(),
+                                  ),
+                              Container(
+                                margin: EdgeInsets.only(
+                                    top: MediaQuery.of(context).size.height *
+                                        0.05),
+                                child: RoundButton(
+                                    title: 'Log In',
+                                    // bgColor: false,
+                                    // loading: authViewModel.loading,
+                                    onPressed: () {}),
+                              ),
+                              Container(
+                                margin: EdgeInsets.only(
+                                    top: MediaQuery.of(context).size.height *
+                                        0.03),
+                                child: const Center(
+                                  child: Text(
+                                    'Forgot your password?',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        color: Color(0xff651FFF), fontSize: 16),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ))),
         ),
       ),
     );

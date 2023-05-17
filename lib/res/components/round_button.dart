@@ -7,32 +7,50 @@ class RoundButton extends StatelessWidget {
   final String title;
   final VoidCallback onPressed;
   final bool loading;
-
+  final bool bgColor;
   const RoundButton(
       {Key? key,
       required this.title,
       required this.onPressed,
-      this.loading = false})
+      this.loading = false,
+      this.bgColor = false,
+      })
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
         height: 40,
-        width: 200,
+        width:  MediaQuery.of(context).size.width - 60,
         child: loading
             ? const Center(
                 child: CircularProgressIndicator(),
               )
-            : MaterialButton(
+            : !bgColor ?  MaterialButton(
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30)),
-                color: AppColors.green,
+                   // side: BorderSide(color: AppColors.logInText),
+                    borderRadius: BorderRadius.circular(5)),
+                color: AppColors.blueText,
                 onPressed: onPressed,
                 child: Text(
                   title,
                   style: TextStyle(color: AppColors.white),
                 ),
-              ));
+              ) 
+
+              :
+
+              MaterialButton(
+                shape: RoundedRectangleBorder(
+                   side: BorderSide(color: AppColors.logInText),
+                    borderRadius: BorderRadius.circular(5)),
+                color: AppColors.white,
+                onPressed: onPressed,
+                child: Text(
+                  title,
+                  style: TextStyle(color: AppColors.logInText),
+                ),
+              )
+              );
   }
 }

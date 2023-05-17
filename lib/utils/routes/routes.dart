@@ -3,7 +3,7 @@ import 'package:mvvm/view/home_screen.dart';
 import 'package:mvvm/view/login_view.dart';
 import 'package:mvvm/view/signup_view.dart';
 import 'package:mvvm/view/splash_view.dart';
-
+import 'package:mvvm/view/intro.dart';
 import 'routes_name.dart';
 
 /// Created by Sawan Kumar on 12/05/23.
@@ -12,6 +12,9 @@ import 'routes_name.dart';
 class Routes {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
+       case RoutesName.intor:
+      return MaterialPageRoute(
+            builder: (BuildContext context) => const Intro());
       case RoutesName.splash:
         return MaterialPageRoute(
             builder: (BuildContext context) => const SplashView());

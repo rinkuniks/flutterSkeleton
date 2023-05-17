@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mvvm/res/color.dart';
 import 'package:mvvm/view_model/services/splash_services.dart';
 
 /// Created by Sawan Kumar on 12/05/23.
@@ -25,8 +26,8 @@ class _SplashViewState extends State<SplashView> {
       backgroundColor: Colors.white,
       body: Center(
           child: Text(
-        'Splash Screen',
-        style: Theme.of(context).textTheme.headline4,
+        'ExcelR',
+        style: TextStyle(fontSize: 42, color: AppColors.blueText),
       )),
     );
   }

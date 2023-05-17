@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/sawankumar/AndroidStudioProjects/excelr-mobileapp-flutter/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-sq/values-sq.xml",
+            "outputFile": "/home/jitendrakumarraiger/Documents/Flutter Projects/excelr-mobileapp-flutter/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-sq/values-sq.xml",
             "map": [
                 {
-                    "source": "/Users/sawankumar/.gradle/caches/transforms-3/acbce933e4b464a5224ed377a62db1f5/transformed/core-1.6.0/res/values-sq/values-sq.xml",
+                    "source": "/home/jitendrakumarraiger/.gradle/caches/transforms-3/acbce933e4b464a5224ed377a62db1f5/transformed/core-1.6.0/res/values-sq/values-sq.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
