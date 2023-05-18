@@ -1,6 +1,7 @@
 import 'dart:js';
 
 import 'package:flutter/material.dart';
+import 'package:mvvm/res/components/videoPlayer.dart';
 import 'package:mvvm/utils/routes/routes_name.dart';
 import 'package:mvvm/view/home_screen.dart';
 import 'package:mvvm/view/login_view.dart';
@@ -11,8 +12,10 @@ import 'package:mvvm/view/intro.dart';
 
 class Routes {
   static MaterialPageRoute generateRoute(RouteSettings settings) {
-    print(settings.name);
     switch (settings.name) {
+         case RoutesName.videoPlayer:
+      return MaterialPageRoute(
+            builder: (BuildContext context) => const VideoPlayer());
       case RoutesName.intor:
       return MaterialPageRoute(
             builder: (BuildContext context) => const Intro());

@@ -87,6 +87,7 @@ class _SignUpViewState extends State<SignUpView> {
                                               color: Colors.grey, fontSize: 12),
                                         ),
                                       ),
+                                       /// input field for name 
                                       Container(
                                         margin: EdgeInsets.only(
                                             top: MediaQuery.of(context)
@@ -122,6 +123,7 @@ class _SignUpViewState extends State<SignUpView> {
                                       const SizedBox(
                                         height: 15,
                                       ),
+                                       /// input field for email
                                       Container(
                                         margin: EdgeInsets.only(top: 10),
                                         child: Text(
@@ -152,6 +154,8 @@ class _SignUpViewState extends State<SignUpView> {
                                       const SizedBox(
                                         height: 15,
                                       ),
+
+                                       /// input field for mobile 
                                       Container(
                                         margin: EdgeInsets.only(top: 10),
                                         child: Text(
@@ -183,6 +187,7 @@ class _SignUpViewState extends State<SignUpView> {
                                       const SizedBox(
                                         height: 15,
                                       ),
+                                       /// input field for password 
                                       Container(
                                         margin: EdgeInsets.only(top: 10),
                                         child: Text(

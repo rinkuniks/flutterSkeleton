@@ -123,6 +123,7 @@ class _LoginViewState extends State<LoginView> {
                                       fontWeight: FontWeight.w400),
                                 ),
                               ),
+
                               AppTextField(
                                   textInputAction: TextInputAction.done,
                                   validator: (input) {
@@ -149,7 +150,9 @@ class _LoginViewState extends State<LoginView> {
                                     title: 'Log In',
                                     // bgColor: false,
                                     // loading: authViewModel.loading,
-                                    onPressed: () {}),
+                                    onPressed: () {
+                                       Navigator.pushNamed(context, RoutesName.videoPlayer);
+                                    }),
                               ),
                               Container(
                                 margin: EdgeInsets.only(
