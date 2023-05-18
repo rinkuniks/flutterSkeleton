@@ -1,9 +1,11 @@
+
+
 import 'package:flutter/material.dart';
-import 'package:mvvm/generated/assets.dart';
-import 'package:mvvm/res/color.dart';
-import 'package:mvvm/res/components/round_button.dart';
-import 'package:mvvm/utils/routes/routes_name.dart';
-import 'package:easy_localization/easy_localization.dart';
+
+import '../generated/assets.dart';
+import '../res/color.dart';
+import '../res/components/round_button.dart';
+import '../utils/routes/routes_name.dart';
 
 class Intro extends StatefulWidget {
   const Intro({Key? key}) : super(key: key);
@@ -26,19 +28,19 @@ class IntroState extends State<Intro> {
         child: Pages(
       text:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ",
-      imgPath: R.intro,
+      imgPath: Assets.assetsIntro,
     )),
     Center(
         child: Pages(
       text:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ",
-      imgPath: R.intro1,
+      imgPath: Assets.assetsIntro1,
     )),
     Center(
         child: Pages(
       text:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ",
-      imgPath:R.intro,
+      imgPath:Assets.assetsIntro,
     )),
   ];
   int _curr = 0;

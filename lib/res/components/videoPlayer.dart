@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mvvm/res/color.dart';
-import 'package:mvvm/view_model/services/splash_services.dart';
 import 'package:vimeo_video_player/vimeo_video_player.dart';
+
+import '../../view_model/services/splash_services.dart';
 
 /// Created by Sawan Kumar on 12/05/23.
 

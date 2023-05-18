@@ -1,7 +1,11 @@
 import 'package:connectivity/connectivity.dart';
 import 'package:flutter/material.dart';
-import 'package:mvvm/base/loading.dart';
-import 'package:mvvm/utils/utils.dart';
+import 'package:flutter_svg/svg.dart';
+
+import '../generated/assets.dart';
+import '../res/color.dart';
+import '../utils/utils.dart';
+import 'loading.dart';
 
 /// Created by Sawan Kumar on 18/05/23.
 
@@ -13,6 +17,7 @@ abstract class BasePage extends StatefulWidget {
 abstract class BasePageState<T extends BasePage> extends State<T> {
   bool shouldPop = true;
 
+
   String topBarTitle() {
     return "";
   }
@@ -20,6 +25,14 @@ abstract class BasePageState<T extends BasePage> extends State<T> {
   /// Handled back click
   void onClickBack() {
     if (shouldPop) Navigator.of(context).pop();
+  }
+
+  String leftIcon (){
+    return Assets.assetsTopbarBack;
+  }
+
+  bool isAppBarNeeded(){
+    return true;
   }
 
 }
@@ -63,6 +76,7 @@ mixin Base<P extends BasePage> on BasePageState<P> {
   }
 
 
+
   @override
   Widget build(BuildContext context) {
     // SystemChrome.setSystemUIOverlayStyle(
@@ -72,6 +86,35 @@ mixin Base<P extends BasePage> on BasePageState<P> {
           return shouldPop;
         },
         child: Scaffold(
+            appBar: isAppBarNeeded() ?AppBar(
+              // Here we take the value from the MyHomePage object that was created by
+              // the App.build method, and use it to set our appbar title.
+              // leading: SvgPicture.asset(Assets.assetsTopbarBack,height: 10, width: 10,),
+              iconTheme: const IconThemeData(
+                  color: AppColors.backIcon,
+
+              ),
+              leading: Transform.scale(
+                  scale: 1.5,
+                  child: InkWell(onTap:(){
+                  },child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 25),
+                    child: SvgPicture.asset(leftIcon()),
+                  )),
+              ),
+
+              title:  Text(topBarTitle(), style: const TextStyle(
+                  color: AppColors.black
+              )),
+              /*actions: [
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(Icons.call),
+                ),
+              ],*/
+              backgroundColor: AppColors.white,
+
+            ) : null,
             body: SafeArea(
               child: Stack(
                 children: [body(), if (loading) Loading()],

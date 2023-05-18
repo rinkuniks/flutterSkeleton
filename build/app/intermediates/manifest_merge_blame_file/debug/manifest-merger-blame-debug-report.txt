@@ -1,6 +1,6 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="com.example.mvvm"
+3    package="com.excelr"
 4    android:versionCode="1"
 5    android:versionName="1.0.0" >
 6
@@ -22,12 +22,12 @@
 18    <application
 19        android:name="android.app.Application"
 20        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-20-->[androidx.core:core:1.6.0] /Users/sawankumar/.gradle/caches/transforms-3/acbce933e4b464a5224ed377a62db1f5/transformed/core-1.6.0/AndroidManifest.xml:24:18-86
+20-->[androidx.core:core:1.7.0] /Users/sawankumar/.gradle/caches/transforms-3/5e083c06c9925c2309f02468fc66e376/transformed/core-1.7.0/AndroidManifest.xml:24:18-86
 21        android:debuggable="true"
 22        android:icon="@mipmap/ic_launcher"
-23        android:label="Excel R" >
+23        android:label="ExcelR" >
 24        <activity
-25            android:name="com.example.mvvm.MainActivity"
+25            android:name="com.excelr.MainActivity"
 26            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
 27            android:exported="true"
 28            android:hardwareAccelerated="true"

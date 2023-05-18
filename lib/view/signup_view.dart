@@ -56,7 +56,7 @@ class _SignUpViewState extends State<SignUpView> {
                                   Navigator.pop(context);
                                 },
                                 child: Image.asset(
-                                  R.back,
+                                  Assets.assetsBack,
                                   height: 20,
                                   width: 20,
                                 ),
@@ -289,7 +289,7 @@ class _SignUpViewState extends State<SignUpView> {
                                                   child: Container(
                                                 height: 22,
                                                 width: 22,
-                                                child: Image.asset(R.google),
+                                                child: Image.asset(Assets.assetsGoogle),
                                               ))),
                                         ),
                                       ),
