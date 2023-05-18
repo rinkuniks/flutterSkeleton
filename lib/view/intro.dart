@@ -66,33 +66,26 @@ class IntroState extends State<Intro> {
         Container(
           height: MediaQuery.of(context).size.height * 0.5,
           //   color: Colors.black,
-          child: Expanded(
-            child: PageView.builder(
-              controller: _pageController,
-              allowImplicitScrolling: true,
-              //  children: _list,
-              scrollDirection: Axis.horizontal,
-              reverse: false,
-              physics: BouncingScrollPhysics(),
-              // controller: controller,
-              onPageChanged: (int pages) {
-                setState(() {
-                  _activePage = pages;
-                });
-              },
-              itemCount: _list.length,
-              itemBuilder: (BuildContext context, int index) {
-                return _list[index % _list.length];
-              },
-            ),
+          child: PageView.builder(
+            controller: _pageController,
+            allowImplicitScrolling: true,
+            //  children: _list,
+            scrollDirection: Axis.horizontal,
+            reverse: false,
+            physics: BouncingScrollPhysics(),
+            // controller: controller,
+            onPageChanged: (int pages) {
+              setState(() {
+                _activePage = pages;
+              });
+            },
+            itemCount: _list.length,
+            itemBuilder: (BuildContext context, int index) {
+              return _list[index % _list.length];
+            },
           ),
         ),
-        Positioned(
-          bottom: 0,
-          left: 0,
-          right: 0,
-          height: 100,
-          child: Container(
+       Container(
             //  color: Colors.black54,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -116,7 +109,6 @@ class IntroState extends State<Intro> {
                       )),
             ),
           ),
-        ),
         Container(
           margin:
               EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.1),

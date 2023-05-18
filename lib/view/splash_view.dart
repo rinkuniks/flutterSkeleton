@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:mvvm/base/base_page.dart';
 import 'package:mvvm/res/color.dart';
 import 'package:mvvm/view_model/services/splash_services.dart';
 
 /// Created by Sawan Kumar on 12/05/23.
 
-class SplashView extends StatefulWidget {
+class SplashView extends BasePage {
   const SplashView({Key? key}) : super(key: key);
 
   @override
   State<SplashView> createState() => _SplashViewState();
 }
 
-class _SplashViewState extends State<SplashView> {
+class _SplashViewState extends BasePageState<SplashView> with Base{
   SplashServices splashServices = SplashServices();
   @override
   void initState() {
@@ -21,14 +22,14 @@ class _SplashViewState extends State<SplashView> {
   }
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
+  Widget body() {
+    return const Scaffold(
       backgroundColor: Colors.white,
       body: Center(
           child: Text(
-        'ExcelR',
-        style: TextStyle(fontSize: 42, color: AppColors.blueText),
-      )),
+            'ExcelR',
+            style: TextStyle(fontSize: 42, color: AppColors.blueText),
+          )),
     );
   }
 }

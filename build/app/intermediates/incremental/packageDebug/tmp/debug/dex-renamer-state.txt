@@ -1,4 +1,4 @@
-#Wed May 17 18:13:53 IST 2023
-base.0=/home/jitendrakumarraiger/Documents/Flutter Projects/excelr-mobileapp-flutter/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+#Thu May 18 16:23:12 IST 2023
+base.0=/Users/sawankumar/AndroidStudioProjects/excelr-mobileapp-flutter/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
 renamed.0=classes.dex
 path.0=classes.dex
