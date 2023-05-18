@@ -3,6 +3,7 @@ import 'package:mvvm/generated/assets.dart';
 import 'package:mvvm/res/color.dart';
 import 'package:mvvm/res/components/round_button.dart';
 import 'package:mvvm/utils/routes/routes_name.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class Intro extends StatefulWidget {
   const Intro({Key? key}) : super(key: key);
