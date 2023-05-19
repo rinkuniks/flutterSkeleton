@@ -1,8 +1,10 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:mvvm/base/base_page.dart';
 import 'package:mvvm/generated/assets.dart';
+import 'package:mvvm/l10n/locale_keys.g.dart';
 import 'package:mvvm/res/components/AppTextField.dart';
 import 'package:mvvm/res/components/round_button.dart';
 import 'package:mvvm/utils/routes/routes_name.dart';
@@ -73,8 +75,8 @@ class _LoginViewState extends BasePageState<LoginView> with Base{
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const Text(
-                              "Welcome back",
+                             Text(
+                              LocaleKeys.welcome_back.tr(),
                               style: TextStyle(
                                   color: Colors.black,
                                   fontWeight: FontWeight.bold,
@@ -140,7 +142,6 @@ class _LoginViewState extends BasePageState<LoginView> with Base{
                                 validator: (input) {
                                   // String? validatorString =
                                   //     Validation.passwordValidator(input, context);
-
                                   // if (validatorString.isNotEmpty) {
                                   //   return validatorString;
                                   // }
@@ -162,7 +163,11 @@ class _LoginViewState extends BasePageState<LoginView> with Base{
                                   // bgColor: false,
                                   // loading: authViewModel.loading,
                                   onPressed: () {
-                                    Navigator.pushNamed(context, RoutesName.videoPlayer);
+                                    // setState(() {
+                                    //     context.setLocale(Locale('hi'));
+                                    // });
+                                   
+                                  //  Navigator.pushNamed(context, RoutesName.videoPlayer);
                                   }),
                             ),
                             Container(
@@ -182,6 +187,7 @@ class _LoginViewState extends BasePageState<LoginView> with Base{
                         ),
                       ),
                     ),
+                    
                   ],
                 ))),
       );

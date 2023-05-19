@@ -1,13 +1,16 @@
 
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:mvvm/base/base_page.dart';
+import 'package:mvvm/l10n/locale_keys.g.dart';
 
 import '../generated/assets.dart';
 import '../res/color.dart';
 import '../res/components/round_button.dart';
 import '../utils/routes/routes_name.dart';
 
-class Intro extends StatefulWidget {
+class Intro extends BasePage {
   const Intro({Key? key}) : super(key: key);
   //static const routeName = '/intro';
 
@@ -15,58 +18,54 @@ class Intro extends StatefulWidget {
   State<Intro> createState() => IntroState();
 }
 
-class IntroState extends State<Intro> {
-  // final controller = PageController(viewportFraction: 1, keepPage: false);
+class IntroState extends BasePageState<Intro> with Base {
   final PageController _pageController = PageController(initialPage: 0);
-  //final _kDuration = const Duration(milliseconds: 300);
-  //final _kCurve = Curves.ease;
   int pageIndex = 0;
   int _activePage = 0;
-  //PageController controller = PageController();
   final List<Widget> _list = <Widget>[
     Center(
         child: Pages(
       text:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ",
+          LocaleKeys.intro_title.tr(),
       imgPath: Assets.assetsIntro,
     )),
     Center(
         child: Pages(
-      text:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ",
+      text:  LocaleKeys.into_title1.tr(),
       imgPath: Assets.assetsIntro1,
     )),
     Center(
         child: Pages(
-      text:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ",
+      text:  LocaleKeys.into_title2.tr(),
       imgPath:Assets.assetsIntro,
     )),
   ];
-  int _curr = 0;
+  
+  // @override
+  // void initState() {
+  //   super.initState();
+  // }
+
   @override
-  void initState() {
-    super.initState();
-    // pageIndex = 0;
+  bool isAppBarNeeded() {
+    // TODO: implement isAppBarNeeded
+    return false;
   }
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        body: SafeArea(
-            child: Column(
+  Widget body() {
+    return Column(
       children: <Widget>[
         Container(
           margin:
               EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.05),
-          child: Center(
-            child: Text(
-              "ExcelR",
-              style: TextStyle(color: AppColors.blueText, fontSize: 28),
+          child:  Center(
+            child: Text(LocaleKeys.app_name.tr(),
+              style: const TextStyle(color: AppColors.blueText, fontSize: 28),
             ),
           ),
         ),
-        Container(
+        SizedBox(
           height: MediaQuery.of(context).size.height * 0.5,
           //   color: Colors.black,
           child: PageView.builder(
@@ -75,7 +74,7 @@ class IntroState extends State<Intro> {
             //  children: _list,
             scrollDirection: Axis.horizontal,
             reverse: false,
-            physics: BouncingScrollPhysics(),
+            physics: const BouncingScrollPhysics(),
             // controller: controller,
             onPageChanged: (int pages) {
               setState(() {
@@ -88,36 +87,33 @@ class IntroState extends State<Intro> {
             },
           ),
         ),
-       Container(
-            //  color: Colors.black54,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: List<Widget>.generate(
-                  _list.length,
-                  (index) => Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 5),
-                        child: InkWell(
-                          onTap: () {
-                            _pageController.animateToPage(index,
-                                duration: const Duration(milliseconds: 300),
-                                curve: Curves.easeIn);
-                          },
-                          child: CircleAvatar(
-                            radius: 7,
-                            backgroundColor: _activePage == index
-                                ? AppColors.activeDot
-                                : AppColors.deActiveDot,
-                          ),
-                        ),
-                      )),
-            ),
-          ),
+       Row(
+         mainAxisAlignment: MainAxisAlignment.center,
+         children: List<Widget>.generate(
+             _list.length,
+             (index) => Padding(
+                   padding: const EdgeInsets.symmetric(horizontal: 5),
+                   child: InkWell(
+                     onTap: () {
+                       _pageController.animateToPage(index,
+                           duration: const Duration(milliseconds: 300),
+                           curve: Curves.easeIn);
+                     },
+                     child: CircleAvatar(
+                       radius: 7,
+                       backgroundColor: _activePage == index
+                           ? AppColors.activeDot
+                           : AppColors.deActiveDot,
+                     ),
+                   ),
+                 )),
+       ),
         Container(
           margin:
               EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.1),
           child: RoundButton(
               title: 'Sign Up',
-             // bgColor: true,
+             // bgColor: true,                     
               // loading: authViewModel.loading,
               onPressed: () {
                 Navigator.pushNamed(context, RoutesName.signUp);
@@ -135,8 +131,98 @@ class IntroState extends State<Intro> {
               }),
         )
       ],
-    )));
+    );
   }
+
+  // @override
+  // Widget build(BuildContext context) {
+  //   return Scaffold(
+  //       body: SafeArea(
+  //           child: Column(
+  //     children: <Widget>[
+  //       Container(
+  //         margin:
+  //             EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.05),
+  //         child: Center(
+  //           child: Text(
+  //             "ExcelR",
+  //             style: TextStyle(color: AppColors.blueText, fontSize: 28),
+  //           ),
+  //         ),
+  //       ),
+  //       Container(
+  //         height: MediaQuery.of(context).size.height * 0.5,
+  //         //   color: Colors.black,
+  //         child: PageView.builder(
+  //           controller: _pageController,
+  //           allowImplicitScrolling: true,
+  //           //  children: _list,
+  //           scrollDirection: Axis.horizontal,
+  //           reverse: false,
+  //           physics: BouncingScrollPhysics(),
+  //           // controller: controller,
+  //           onPageChanged: (int pages) {
+  //             setState(() {
+  //               _activePage = pages;
+  //             });
+  //           },
+  //           itemCount: _list.length,
+  //           itemBuilder: (BuildContext context, int index) {
+  //             return _list[index % _list.length];
+  //           },
+  //         ),
+  //       ),
+  //      Container(
+  //           //  color: Colors.black54,
+  //           child: Row(
+  //             mainAxisAlignment: MainAxisAlignment.center,
+  //             children: List<Widget>.generate(
+  //                 _list.length,
+  //                 (index) => Padding(
+  //                       padding: const EdgeInsets.symmetric(horizontal: 5),
+  //                       child: InkWell(
+  //                         onTap: () {
+  //                           _pageController.animateToPage(index,
+  //                               duration: const Duration(milliseconds: 300),
+  //                               curve: Curves.easeIn);
+  //                         },
+  //                         child: CircleAvatar(
+  //                           radius: 7,
+  //                           backgroundColor: _activePage == index
+  //                               ? AppColors.activeDot
+  //                               : AppColors.deActiveDot,
+  //                         ),
+  //                       ),
+  //                     )),
+  //           ),
+  //         ),
+  //       Container(all
+  //         margin:
+  //             EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.1),
+  //         child: RoundButton(
+  //             title: 'Sign Up',
+  //            // bgColor: true,
+  //             // loading: authViewModel.loading,
+  //             onPressed: () {
+  //               Navigator.pushNamed(context, RoutesName.signUp);
+  //             }),
+  //       ),
+  //       Container(
+  //         margin:
+  //             EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.02),
+  //         child: RoundButton(
+  //             title: 'Log In',
+  //             bgColor: true,
+  //             // loading: authViewModel.loading,
+  //             onPressed: () {
+  //                Navigator.pushNamed(context, RoutesName.login);
+  //             }),
+  //       )
+  //     ],
+  //   )));
+  // }
+  
+
 }
 
 class Pages extends StatelessWidget {

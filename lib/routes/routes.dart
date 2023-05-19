@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
 import 'package:mvvm/res/components/videoPlayer.dart';
 import 'package:mvvm/utils/routes/routes_name.dart';
@@ -32,7 +30,7 @@ class Routes {
         return MaterialPageRoute(
             builder: (BuildContext constext) => const Scaffold(
                   body: Center(
-                    child: Text('No Route found'),
+                    child: Text('No Route kkkkkfound'),
                   ),
                 ));
     }

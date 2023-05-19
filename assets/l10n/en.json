@@ -1,5 +1,7 @@
 {
-    "title" : "Title",
-    "app_local_demo" : "Application localization example",
-    "demo_details" : "This is a sample project to change the language with a drop down menu of languages"
-    }
+    "app_name": "ExcelR",
+    "intro_title" :"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor1",
+    "into_title1" :"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor2",
+    "into_title2" :"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor3",
+    "welcome_back":"Welcome back"
+  }

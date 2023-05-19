@@ -22,6 +22,12 @@ class _SplashViewState extends BasePageState<SplashView> with Base{
   }
 
   @override
+  bool isAppBarNeeded() {
+    // TODO: implement isAppBarNeeded
+    return false;
+  }
+
+  @override
   Widget body() {
     return const Scaffold(
       backgroundColor: Colors.white,
