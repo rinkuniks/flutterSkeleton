@@ -1,6 +1,7 @@
 import 'package:mvvm/data/network/base_api_services.dart';
 import 'package:mvvm/data/network/network_api_services.dart';
-import 'package:mvvm/res/app_url.dart';
+
+import '../res/app_url.dart';
 
 /// Created by Sawan Kumar on 12/05/23.
 

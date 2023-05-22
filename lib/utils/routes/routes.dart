@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:mvvm/res/components/videoPlayer.dart';
-import 'package:mvvm/view/home_screen.dart';
-import 'package:mvvm/view/login_view.dart';
-import 'package:mvvm/view/signup_view.dart';
 import 'package:mvvm/view/splash_view.dart';
-import 'package:mvvm/view/intro.dart';
+
+import '../../res/components/videoPlayer.dart';
+import '../../view/home_screen.dart';
+import '../../view/intro.dart';
+import '../../view/login_view.dart';
+import '../../view/signup_view.dart';
 import 'routes_name.dart';
 
 /// Created by Sawan Kumar on 12/05/23.
@@ -36,7 +37,7 @@ class Routes {
         return MaterialPageRoute(
             builder: (BuildContext constext) => const Scaffold(
                   body: Center(
-                    child: Text('No Route found'),
+                    child: Text('No Route found aa'),
                   ),
                 ));
     }

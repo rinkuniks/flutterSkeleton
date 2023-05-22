@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mvvm/res/color.dart';
+
+import '../color.dart';
 
 class AppTextField extends StatefulWidget {
   AppTextField({

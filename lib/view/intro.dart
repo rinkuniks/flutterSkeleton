@@ -52,6 +52,8 @@ class IntroState extends BasePageState<Intro> with Base {
     return false;
   }
 
+  
+
   @override
   Widget body() {
     return Column(
@@ -112,7 +114,7 @@ class IntroState extends BasePageState<Intro> with Base {
           margin:
               EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.1),
           child: RoundButton(
-              title: 'Sign Up',
+              title:LocaleKeys.sign_up.tr(),
              // bgColor: true,                     
               // loading: authViewModel.loading,
               onPressed: () {
@@ -123,11 +125,11 @@ class IntroState extends BasePageState<Intro> with Base {
           margin:
               EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.02),
           child: RoundButton(
-              title: 'Log In',
+              title: LocaleKeys.login.tr(),
               bgColor: true,
               // loading: authViewModel.loading,
               onPressed: () {
-                 Navigator.pushNamed(context, RoutesName.login);
+                 Navigator.pushNamed(context, RoutesName.login).then((value) => {});
               }),
         )
       ],

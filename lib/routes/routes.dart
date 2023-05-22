@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:mvvm/res/components/videoPlayer.dart';
-import 'package:mvvm/utils/routes/routes_name.dart';
-import 'package:mvvm/view/home_screen.dart';
-import 'package:mvvm/view/login_view.dart';
-import 'package:mvvm/view/signup_view.dart';
-import 'package:mvvm/view/intro.dart';
+import 'package:mvvm/view/splash_view.dart';
+
+import '../res/components/videoPlayer.dart';
+import '../utils/routes/routes_name.dart';
+import '../view/home_screen.dart';
+import '../view/intro.dart';
+import '../view/login_view.dart';
+import '../view/signup_view.dart';
+
 /// Created by Sawan Kumar on 12/05/23.
 
 
@@ -17,6 +20,9 @@ class Routes {
       case RoutesName.intor:
       return MaterialPageRoute(
             builder: (BuildContext context) => const Intro());
+      case RoutesName.splash:
+        return MaterialPageRoute(
+            builder: (BuildContext context) => const SplashView());
       case RoutesName.home:
         return MaterialPageRoute(
             builder: (BuildContext context) => const HomeScreen());
@@ -30,7 +36,7 @@ class Routes {
         return MaterialPageRoute(
             builder: (BuildContext constext) => const Scaffold(
                   body: Center(
-                    child: Text('No Route kkkkkfound'),
+                    child: Text('No Route found  dd'),
                   ),
                 ));
     }
