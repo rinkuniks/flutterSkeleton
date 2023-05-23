@@ -25,15 +25,19 @@ class MessageLookup extends MessageLookupByLibrary {
         "app_name": MessageLookupByLibrary.simpleMessage("ExcelR"),
         "create_an_account":
             MessageLookupByLibrary.simpleMessage("Create an account"),
+        "dark_theme": MessageLookupByLibrary.simpleMessage("Dark Theme"),
         "email": MessageLookupByLibrary.simpleMessage("ईमेल"),
+        "english": MessageLookupByLibrary.simpleMessage("English Lang"),
         "forgot_password":
             MessageLookupByLibrary.simpleMessage("अपना कूट शब्द भूल गए?"),
+        "hindi": MessageLookupByLibrary.simpleMessage("Hindi Lang"),
         "into_title1": MessageLookupByLibrary.simpleMessage(
             "ग्राहक खुद बहुत महत्वपूर्ण है, ग्राहक ग्राहक का अनुसरण करेगा, लेकिन मैं उसे उतना ही समय दूंगा2"),
         "into_title2": MessageLookupByLibrary.simpleMessage(
             "ग्राहक खुद बहुत महत्वपूर्ण है, ग्राहक ग्राहक का अनुसरण करेगा, लेकिन मैं उसे उतना ही समय दूंगा3"),
         "intro_title": MessageLookupByLibrary.simpleMessage(
             "ग्राहक खुद बहुत महत्वपूर्ण है, ग्राहक ग्राहक का अनुसरण करेगा, लेकिन मैं उसे उतना ही समय दूंगा1"),
+        "light_theme": MessageLookupByLibrary.simpleMessage("Light Theme"),
         "login": MessageLookupByLibrary.simpleMessage("लॉग इन करें"),
         "mobile": MessageLookupByLibrary.simpleMessage("Mobile"),
         "name": MessageLookupByLibrary.simpleMessage("Name"),

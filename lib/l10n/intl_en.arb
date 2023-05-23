@@ -7,12 +7,15 @@
     "email":"Email",
     "password":"Password",
     "login":"Log In",
-     "forgot_password":"Forgot your password?",
-     "welcome_to_excelR":"Welcome to ExcelR, please enter your details to continue",
-   "create_an_account" : "Create an account",
-   "name":"Name",
-   "mobile":"Mobile",
-   "sign_up":"Sign Up",
-   "sign_up_with":"or sign up with"
-
+    "forgot_password":"Forgot your password?",
+    "welcome_to_excelR":"Welcome to ExcelR, please enter your details to continue",
+    "create_an_account" : "Create an account",
+    "name":"Name",
+    "mobile":"Mobile",
+    "sign_up":"Sign Up",
+    "sign_up_with":"or sign up with",
+    "light_theme":"Light Theme",
+    "dark_theme":"Dark Theme",
+    "hindi":"Hindi Lang",
+    "english":"English Lang"
 }

@@ -13,6 +13,9 @@
    "name":"Name",
    "mobile":"Mobile",
    "sign_up":"Sign Up",
-   "sign_up_with":"or sign up with"
-
+   "sign_up_with":"or sign up with",
+    "light_theme":"Light Theme",
+    "dark_theme":"Dark Theme",
+    "hindi":"Hindi Lang",
+    "english":"English Lang"
 }

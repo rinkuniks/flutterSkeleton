@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:mvvm/base/base_page.dart';
+import 'package:provider/provider.dart';
 
 import '../generated/assets.dart';
 import '../generated/l10n.dart';
 import '../res/color.dart';
+import '../res/components/LocalLang.dart';
 import '../res/components/round_button.dart';
 import '../utils/routes/routes_name.dart';
 
 class Intro extends BasePage {
   const Intro({Key? key}) : super(key: key);
-  //static const routeName = '/intro';
 
   @override
   State<Intro> createState() => IntroState();
@@ -19,6 +20,8 @@ class IntroState extends BasePageState<Intro> with Base {
   final PageController _pageController = PageController(initialPage: 0);
   int pageIndex = 0;
   int _activePage = 0;
+  bool isLight = false;
+  bool isEnglish = false;
 
   List<Widget> _list(BuildContext context) {
     S s = S.of(context);
@@ -40,11 +43,6 @@ class IntroState extends BasePageState<Intro> with Base {
       )),
     ];
   }
-
-  // @override
-  // void initState() {
-  //   super.initState();
-  // }
 
   @override
   bool isAppBarNeeded() {
@@ -131,98 +129,65 @@ class IntroState extends BasePageState<Intro> with Base {
               onPressed: () {
                 Navigator.pushNamed(context, RoutesName.login);
               }),
-        )
+        ),
+        Container(
+          margin: const EdgeInsets.only(right: 30, left: 30),
+          child:  Row(
+              children: <Widget>[
+                Flexible(
+                  flex: 1,
+                  child: Container(
+                    margin:
+                    EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.02, right: 5),
+                    child: RoundButton(
+                        title: isLight ? s.light_theme : s.dark_theme,
+                        bgColor: true,
+                        // loading: authViewModel.loading,
+                        onPressed: () {
+                          if(isLight == true){
+                            Provider.of<LocalLang>(context, listen: false)
+                                .setThemeMode(ThemeMode.light);
+                            isLight = false;
+                          }else{
+                            Provider.of<LocalLang>(context, listen: false)
+                                .setThemeMode(ThemeMode.dark);
+                            isLight = true;
+                          }
+                        }),
+                  ),
+                ),
+                Flexible(
+                  flex: 1,
+                  child: Container(
+                    margin:
+                    EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.02, left: 5),
+                    child: RoundButton(
+                        title: isEnglish ? s.english : s.hindi,
+                        bgColor: true,
+                        // loading: authViewModel.loading,
+                        onPressed: () {
+                          if(isEnglish == true){
+                            Provider.of<LocalLang>(context, listen: false)
+                                .setLocal(
+                              "en",
+                            );
+                            isEnglish = false;
+                          }else{
+                            Provider.of<LocalLang>(context, listen: false)
+                                .setLocal(
+                              "hi",
+                            );
+                            isEnglish = true;
+                          }
+                        }),
+                  ),
+                ),
+              ],
+            ),
+          ),
       ],
     );
   }
-
-  // @override
-  // Widget build(BuildContext context) {
-  //   return Scaffold(
-  //       body: SafeArea(
-  //           child: Column(
-  //     children: <Widget>[
-  //       Container(
-  //         margin:
-  //             EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.05),
-  //         child: Center(
-  //           child: Text(
-  //             "ExcelR",
-  //             style: TextStyle(color: AppColors.blueText, fontSize: 28),
-  //           ),
-  //         ),
-  //       ),
-  //       Container(
-  //         height: MediaQuery.of(context).size.height * 0.5,
-  //         //   color: Colors.black,
-  //         child: PageView.builder(
-  //           controller: _pageController,
-  //           allowImplicitScrolling: true,
-  //           //  children: _list,
-  //           scrollDirection: Axis.horizontal,
-  //           reverse: false,
-  //           physics: BouncingScrollPhysics(),
-  //           // controller: controller,
-  //           onPageChanged: (int pages) {
-  //             setState(() {
-  //               _activePage = pages;
-  //             });
-  //           },
-  //           itemCount: _list.length,
-  //           itemBuilder: (BuildContext context, int index) {
-  //             return _list[index % _list.length];
-  //           },
-  //         ),
-  //       ),
-  //      Container(
-  //           //  color: Colors.black54,
-  //           child: Row(
-  //             mainAxisAlignment: MainAxisAlignment.center,
-  //             children: List<Widget>.generate(
-  //                 _list.length,
-  //                 (index) => Padding(
-  //                       padding: const EdgeInsets.symmetric(horizontal: 5),
-  //                       child: InkWell(
-  //                         onTap: () {
-  //                           _pageController.animateToPage(index,
-  //                               duration: const Duration(milliseconds: 300),
-  //                               curve: Curves.easeIn);
-  //                         },
-  //                         child: CircleAvatar(
-  //                           radius: 7,
-  //                           backgroundColor: _activePage == index
-  //                               ? AppColors.activeDot
-  //                               : AppColors.deActiveDot,
-  //                         ),
-  //                       ),
-  //                     )),
-  //           ),
-  //         ),
-  //       Container(all
-  //         margin:
-  //             EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.1),
-  //         child: RoundButton(
-  //             title: 'Sign Up',
-  //            // bgColor: true,
-  //             // loading: authViewModel.loading,
-  //             onPressed: () {
-  //               Navigator.pushNamed(context, RoutesName.signUp);
-  //             }),
-  //       ),
-  //       Container(
-  //         margin:
-  //             EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.02),
-  //         child: RoundButton(
-  //             title: 'Log In',
-  //             bgColor: true,
-  //             // loading: authViewModel.loading,
-  //             onPressed: () {
-  //                Navigator.pushNamed(context, RoutesName.login);
-  //             }),
-  //       )
-  //     ],
-  //   )));
-  // }
 }
 
 class Pages extends StatelessWidget {

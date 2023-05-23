@@ -1,4 +1,3 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -48,19 +47,6 @@ class _LoginViewState extends BasePageState<LoginView> with Base {
     return false;
   }
 
-//   DarkThemeProvider themeChangeProvider = new DarkThemeProvider();
-// @override
-// void initState() {
-//   super.initState();
-//   getCurrentAppTheme();
-// }
-//
-// void getCurrentAppTheme() async {
-//   themeChangeProvider.darkTheme =
-//       await themeChangeProvider.darkThemePreference.getTheme();
-//       print(themeChangeProvider);
-// }
-
   @override
   Widget body() {
     final authViewModel = Provider.of<AuthViewModel>(context);
@@ -71,7 +57,7 @@ class _LoginViewState extends BasePageState<LoginView> with Base {
       //  color: Colors.black,
       child: SingleChildScrollView(
           child: Padding(
-              padding: EdgeInsets.fromLTRB(25, 30, 25, 10),
+              padding: const EdgeInsets.fromLTRB(25, 30, 25, 10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -102,11 +88,11 @@ class _LoginViewState extends BasePageState<LoginView> with Base {
                                 fontSize: 26),
                           ),
                           Container(
-                            margin: EdgeInsets.only(top: 10),
+                            margin: const EdgeInsets.only(top: 10),
                             child: Text(
                               s.welcome_to_excelR,
                               style:
-                                  TextStyle(color: Colors.grey, fontSize: 12),
+                                  const TextStyle(color: Colors.grey, fontSize: 12),
                             ),
                           ),
                           const SizedBox(
@@ -115,10 +101,10 @@ class _LoginViewState extends BasePageState<LoginView> with Base {
 
                           /// input field for Email
                           Container(
-                            margin: EdgeInsets.only(top: 10),
+                            margin: const EdgeInsets.only(top: 10),
                             child: Text(
                               s.email,
-                              style: TextStyle(
+                              style: const TextStyle(
                                   color: Colors.grey,
                                   fontSize: 16,
                                   fontWeight: FontWeight.w400),
@@ -148,10 +134,10 @@ class _LoginViewState extends BasePageState<LoginView> with Base {
 
                           /// input field for password
                           Container(
-                            margin: EdgeInsets.only(top: 10),
+                            margin: const EdgeInsets.only(top: 10),
                             child: Text(
                               s.password,
-                              style: TextStyle(
+                              style: const TextStyle(
                                   color: Colors.grey,
                                   fontSize: 16,
                                   fontWeight: FontWeight.w400),
@@ -206,12 +192,11 @@ class _LoginViewState extends BasePageState<LoginView> with Base {
                                   // );
                                   Provider.of<LocalLang>(context, listen: false)
                                       .setThemeMode(ThemeMode.dark);
-                                  // context.setLocale(Locale('en'));
                                 },
                                 child: Text(
                                   s.forgot_password,
                                   textAlign: TextAlign.center,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       color: Color(0xff651FFF), fontSize: 16),
                                 ),
                               ),
