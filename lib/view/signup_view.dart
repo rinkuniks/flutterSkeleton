@@ -1,6 +1,5 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -8,7 +7,8 @@ import 'package:provider/provider.dart';
 
 import '../base/base_page.dart';
 import '../generated/assets.dart';
-import '../l10n/locale_keys.g.dart';
+
+import '../generated/l10n.dart';
 import '../res/color.dart';
 import '../res/components/AppTextField.dart';
 import '../res/components/round_button.dart';
@@ -47,6 +47,7 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
 
   @override
   Widget body() {
+    S s = S.of(context);
     return SingleChildScrollView(
         child: Padding(
             padding: EdgeInsets.fromLTRB(25, 30, 25, 10),
@@ -72,7 +73,7 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
                     //mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Text(
-                        LocaleKeys.create_an_account.tr(),
+                        s.create_an_account,
                         style: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
@@ -80,7 +81,8 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
                       ),
                       Container(
                         margin: EdgeInsets.only(top: 10),
-                        child:  Text(LocaleKeys.welcome_to_excelR.tr(),
+                        child: Text(
+                          s.welcome_to_excelR,
                           style: TextStyle(color: Colors.grey, fontSize: 12),
                         ),
                       ),
@@ -89,7 +91,8 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
                       Container(
                         margin: EdgeInsets.only(
                             top: MediaQuery.of(context).size.height * 0.05),
-                        child: Text(LocaleKeys.name.tr(),
+                        child: Text(
+                          s.name,
                           style: TextStyle(
                               color: Colors.grey,
                               fontSize: 16,
@@ -120,7 +123,8 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
                       /// input field for email
                       Container(
                         margin: EdgeInsets.only(top: 10),
-                        child: Text(LocaleKeys.email.tr(),
+                        child: Text(
+                          s.email,
                           style: TextStyle(
                               color: Colors.grey,
                               fontSize: 16,
@@ -150,7 +154,8 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
                       /// input field for mobile
                       Container(
                         margin: EdgeInsets.only(top: 10),
-                        child: Text(LocaleKeys.mobile.tr(),
+                        child: Text(
+                          s.mobile,
                           style: TextStyle(
                               color: Colors.grey,
                               fontSize: 16,
@@ -181,7 +186,8 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
                       /// input field for password
                       Container(
                         margin: EdgeInsets.only(top: 10),
-                        child: Text(LocaleKeys.password.tr(),
+                        child: Text(
+                          s.password,
                           style: TextStyle(
                               color: Colors.grey,
                               fontSize: 16,
@@ -208,7 +214,7 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
                       Container(
                         margin: EdgeInsets.only(top: 40),
                         child: RoundButton(
-                            title: LocaleKeys.sign_up,
+                            title: s.sign_up,
                             // loading: authViewModel.loading,
                             onPressed: () {
                               if (emailC.text.isEmpty) {
@@ -239,7 +245,8 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
                         height: 1,
                       ),
                       Center(
-                        child: Text(LocaleKeys.sign_up_with,
+                        child: Text(
+                          s.sign_up_with,
                           style: TextStyle(
                               color: Colors.grey,
                               fontWeight: FontWeight.w400,

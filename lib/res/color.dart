@@ -47,7 +47,7 @@ class AppColors {
     fontSize: 16.0,
   );
   static const TextStyle defaultButtonTextStyle =
-  TextStyle(color: AppColors.black, fontSize: 20);
+      TextStyle(color: AppColors.black, fontSize: 20);
 
   static const TextStyle profileTextStyleBlack = TextStyle(
     color: AppColors.black,
@@ -81,13 +81,10 @@ class AppColors {
       focusColor: isDarkTheme ? Color(0xff0B2512) : Color(0xffA8DAB5),
       disabledColor: Colors.grey,
       // textSelectionColor: isDarkTheme ? Colors.white : Colors.black,
-      cardColor: isDarkTheme ? Color(0xFFFFFFFF) : Colors.black,
+      cardColor: isDarkTheme ? Colors.red : Colors.black,
       canvasColor: isDarkTheme ? Colors.black : Colors.grey[50],
       brightness: isDarkTheme ? Brightness.dark : Brightness.light,
-      buttonTheme: Theme
-          .of(context)
-          .buttonTheme
-          .copyWith(
+      buttonTheme: Theme.of(context).buttonTheme.copyWith(
           colorScheme: isDarkTheme ? ColorScheme.dark() : ColorScheme.light()),
       appBarTheme: AppBarTheme(
         elevation: 0.0,

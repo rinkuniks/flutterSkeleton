@@ -1,14 +1,15 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../base/base_page.dart';
 import '../base/theme/DarkThemeProvider.dart';
 import '../generated/assets.dart';
-import '../l10n/locale_keys.g.dart';
+import '../generated/l10n.dart';
+
 import '../res/components/AppTextField.dart';
+import '../res/components/LocalLang.dart';
 import '../res/components/round_button.dart';
 import '../view_model/auth_view_model.dart';
 
@@ -64,6 +65,7 @@ class _LoginViewState extends BasePageState<LoginView> with Base {
   Widget body() {
     final authViewModel = Provider.of<AuthViewModel>(context);
     final height = MediaQuery.of(context).size.height * 1;
+    S s = S.of(context);
     return SizedBox(
       height: MediaQuery.of(context).size.height,
       //  color: Colors.black,
@@ -92,18 +94,19 @@ class _LoginViewState extends BasePageState<LoginView> with Base {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            LocaleKeys.welcome_back.tr(),
+                            s.welcome_back,
                             style: TextStyle(
-                                color: Colors.black,
+                                // color: Colors.black,
+                                color: Theme.of(context).cardColor,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 26),
                           ),
                           Container(
                             margin: EdgeInsets.only(top: 10),
-                            child: Text(LocaleKeys.welcome_to_excelR.tr(),
-                              style: TextStyle(
-                                  color:Colors.grey,
-                                  fontSize: 12),
+                            child: Text(
+                              s.welcome_to_excelR,
+                              style:
+                                  TextStyle(color: Colors.grey, fontSize: 12),
                             ),
                           ),
                           const SizedBox(
@@ -114,7 +117,7 @@ class _LoginViewState extends BasePageState<LoginView> with Base {
                           Container(
                             margin: EdgeInsets.only(top: 10),
                             child: Text(
-                              LocaleKeys.email.tr(),
+                              s.email,
                               style: TextStyle(
                                   color: Colors.grey,
                                   fontSize: 16,
@@ -147,7 +150,7 @@ class _LoginViewState extends BasePageState<LoginView> with Base {
                           Container(
                             margin: EdgeInsets.only(top: 10),
                             child: Text(
-                              LocaleKeys.password.tr(),
+                              s.password,
                               style: TextStyle(
                                   color: Colors.grey,
                                   fontSize: 16,
@@ -176,12 +179,17 @@ class _LoginViewState extends BasePageState<LoginView> with Base {
                             margin: EdgeInsets.only(
                                 top: MediaQuery.of(context).size.height * 0.05),
                             child: RoundButton(
-                                title: LocaleKeys.login.tr(),
+                                title: s.login,
                                 // bgColor: false,
                                 // loading: authViewModel.loading,
                                 onPressed: () {
-                                  //  Provider.of<LocalLang>(context, listen: false) .setLocal("en");
-                                  context.setLocale(Locale('hi'));
+                                  /*  Provider.of<LocalLang>(context, listen: false)
+                                      .setLocal(
+                                    "en",
+                                  ); */
+                                  Provider.of<LocalLang>(context, listen: false)
+                                      .setThemeMode(ThemeMode.light);
+                                  // context.setLocale(Locale('hi'));
                                   //   Navigator.pushNamed(context, RoutesName.signUp);
                                   //  Navigator.pushNamed(context, RoutesName.videoPlayer);
                                 }),
@@ -192,10 +200,16 @@ class _LoginViewState extends BasePageState<LoginView> with Base {
                             child: Center(
                               child: InkWell(
                                 onTap: () {
-                                  //  Provider.of<LocalLang>(context, listen: false).setLocal("hi");
-                                  context.setLocale(Locale('en'));
+                                  // Provider.of<LocalLang>(context, listen: false)
+                                  //     .setLocal(
+                                  //   "hi",
+                                  // );
+                                  Provider.of<LocalLang>(context, listen: false)
+                                      .setThemeMode(ThemeMode.dark);
+                                  // context.setLocale(Locale('en'));
                                 },
-                                child: Text(LocaleKeys.forgot_password.tr(),
+                                child: Text(
+                                  s.forgot_password,
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                       color: Color(0xff651FFF), fontSize: 16),

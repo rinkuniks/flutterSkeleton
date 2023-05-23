@@ -9,7 +9,4 @@ class Assets {
   static const String assetsIntro1 = 'assets/intro1.png';
   static const String assetsTopbarBack = 'assets/topbarBack.svg';
   static const String assetsTopbarCross = 'assets/topbarCross.svg';
-  static const String l10nEn = 'assets/l10n/en.json';
-  static const String l10nEs = 'assets/l10n/es.json';
-
 }

@@ -10,16 +10,14 @@ import '../view/signup_view.dart';
 
 /// Created by Sawan Kumar on 12/05/23.
 
-
 class Routes {
   static MaterialPageRoute generateRoute(RouteSettings settings) {
     switch (settings.name) {
-         case RoutesName.videoPlayer:
-      return MaterialPageRoute(
+      case RoutesName.videoPlayer:
+        return MaterialPageRoute(
             builder: (BuildContext context) => const VideoPlayer());
       case RoutesName.intor:
-      return MaterialPageRoute(
-            builder: (BuildContext context) => const Intro());
+        return MaterialPageRoute(builder: (BuildContext context) => Intro());
       case RoutesName.splash:
         return MaterialPageRoute(
             builder: (BuildContext context) => const SplashView());
