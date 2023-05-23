@@ -74,16 +74,13 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
                     children: <Widget>[
                       Text(
                         s.create_an_account,
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 26),
+                        style: AppColors.primaryBlackTextStyleBold
                       ),
                       Container(
                         margin: EdgeInsets.only(top: 10),
                         child: Text(
                           s.welcome_to_excelR,
-                          style: TextStyle(color: Colors.grey, fontSize: 12),
+                          style: AppColors.secondaryGreyTextStyle,
                         ),
                       ),
 
@@ -93,10 +90,7 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
                             top: MediaQuery.of(context).size.height * 0.05),
                         child: Text(
                           s.name,
-                          style: TextStyle(
-                              color: Colors.grey,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w400),
+                          style: AppColors.secondaryGreyTextStyleBold,
                         ),
                       ),
                       AppTextField(
@@ -125,10 +119,7 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
                         margin: EdgeInsets.only(top: 10),
                         child: Text(
                           s.email,
-                          style: TextStyle(
-                              color: Colors.grey,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w400),
+                          style: AppColors.secondaryGreyTextStyleBold
                         ),
                       ),
                       AppTextField(
@@ -156,10 +147,7 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
                         margin: EdgeInsets.only(top: 10),
                         child: Text(
                           s.mobile,
-                          style: TextStyle(
-                              color: Colors.grey,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w400),
+                          style: AppColors.secondaryGreyTextStyleBold,
                         ),
                       ),
                       AppTextField(
@@ -188,10 +176,7 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
                         margin: EdgeInsets.only(top: 10),
                         child: Text(
                           s.password,
-                          style: TextStyle(
-                              color: Colors.grey,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w400),
+                          style: AppColors.secondaryGreyTextStyleBold,
                         ),
                       ),
                       AppTextField(
@@ -247,10 +232,7 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
                       Center(
                         child: Text(
                           s.sign_up_with,
-                          style: TextStyle(
-                              color: Colors.grey,
-                              fontWeight: FontWeight.w400,
-                              fontSize: 16),
+                          style: AppColors.secondaryGreyTextStyleBold
                         ),
                       ),
 

@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:mvvm/res/color.dart';
 import 'package:provider/provider.dart';
 
 import '../base/base_page.dart';
@@ -81,18 +82,14 @@ class _LoginViewState extends BasePageState<LoginView> with Base {
                         children: [
                           Text(
                             s.welcome_back,
-                            style: TextStyle(
-                                // color: Colors.black,
-                                color: Theme.of(context).cardColor,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 26),
+                            style: AppColors.welcomeTextStyleBold
                           ),
                           Container(
                             margin: const EdgeInsets.only(top: 10),
                             child: Text(
                               s.welcome_to_excelR,
                               style:
-                                  const TextStyle(color: Colors.grey, fontSize: 12),
+                                  AppColors.secondaryGreyTextStyleBold,
                             ),
                           ),
                           const SizedBox(
@@ -104,10 +101,7 @@ class _LoginViewState extends BasePageState<LoginView> with Base {
                             margin: const EdgeInsets.only(top: 10),
                             child: Text(
                               s.email,
-                              style: const TextStyle(
-                                  color: Colors.grey,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w400),
+                              style: AppColors.secondaryGreyTextStyleBold
                             ),
                           ),
                           AppTextField(
@@ -137,10 +131,7 @@ class _LoginViewState extends BasePageState<LoginView> with Base {
                             margin: const EdgeInsets.only(top: 10),
                             child: Text(
                               s.password,
-                              style: const TextStyle(
-                                  color: Colors.grey,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w400),
+                              style: AppColors.secondaryGreyTextStyleBold
                             ),
                           ),
 
@@ -196,8 +187,7 @@ class _LoginViewState extends BasePageState<LoginView> with Base {
                                 child: Text(
                                   s.forgot_password,
                                   textAlign: TextAlign.center,
-                                  style: const TextStyle(
-                                      color: Color(0xff651FFF), fontSize: 16),
+                                  style: AppColors.secondaryTextStyle,
                                 ),
                               ),
                             ),

@@ -18,15 +18,55 @@ class AppColors {
   static const Color backIcon = Color(0xFFA0A0A0);
 
 //Strings
-  static const TextStyle defaultTextStyle = TextStyle(
+  static const TextStyle primaryTextStyleTitle = TextStyle(
+    color: AppColors.blueText,
+    fontSize: 42.0,
+  );
+
+  static const TextStyle primaryTextStyle = TextStyle(
+    color: AppColors.blueText,
+    fontSize: 20.0,
+  );
+
+  static const TextStyle primaryBlackTextStyle = TextStyle(
     color: AppColors.black,
     fontSize: 20.0,
   );
-  static const TextStyle defaultTextStyleBlack = TextStyle(
+
+  static const TextStyle primaryBlackTextStyleBold = TextStyle(
     color: AppColors.black,
     fontSize: 20.0,
+    fontWeight: FontWeight.w500
   );
-  static const TextStyle defaultTextStyleGRey = TextStyle(
+
+  static const TextStyle primaryTextStyleBold = TextStyle(
+    color: AppColors.black,
+    fontSize: 14.0,
+    fontWeight: FontWeight.w500
+  );
+
+  static const TextStyle welcomeTextStyleBold = TextStyle(
+      color: AppColors.black,
+      fontSize: 24.0,
+      fontWeight: FontWeight.w500
+  );
+
+  static const TextStyle secondaryTextStyle = TextStyle(
+    color: AppColors.blueText,
+    fontSize: 16.0,
+  );
+
+  static const TextStyle secondaryGreyTextStyle = TextStyle(
+    color: Colors.grey,
+    fontSize: 16.0,
+  );
+
+  static const TextStyle secondaryGreyTextStyleBold = TextStyle(
+    color: Colors.grey,
+    fontSize: 16.0,
+    fontWeight: FontWeight.w400
+  );
+  static const TextStyle tertiaryTextStyle = TextStyle(
     color: AppColors.black,
     fontSize: 20.0,
   );

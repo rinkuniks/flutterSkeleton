@@ -35,7 +35,7 @@ class _SplashViewState extends BasePageState<SplashView> with Base{
       body: Center(
           child: Text(
             'ExcelR',
-            style: TextStyle(fontSize: 42, color: AppColors.blueText),
+            style: AppColors.primaryTextStyleTitle,
           )),
     );
   }

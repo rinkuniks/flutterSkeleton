@@ -24,21 +24,21 @@ class IntroState extends BasePageState<Intro> with Base {
   bool isEnglish = false;
 
   List<Widget> _list(BuildContext context) {
-    S s = S.of(context);
+    S str = S.of(context);
     return [
       Center(
           child: Pages(
-        text: s.intro_title,
+        text: str.intro_title,
         imgPath: Assets.assetsIntro,
       )),
       Center(
           child: Pages(
-        text: s.into_title1,
+        text: str.into_title1,
         imgPath: Assets.assetsIntro1,
       )),
       Center(
           child: Pages(
-        text: s.into_title2,
+        text: str.into_title2,
         imgPath: Assets.assetsIntro,
       )),
     ];
@@ -52,7 +52,7 @@ class IntroState extends BasePageState<Intro> with Base {
 
   @override
   Widget body() {
-    S s = S.of(context);
+    S str = S.of(context);
     return Column(
       children: <Widget>[
         Container(
@@ -60,8 +60,8 @@ class IntroState extends BasePageState<Intro> with Base {
               EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.05),
           child: Center(
             child: Text(
-              s.app_name,
-              style: const TextStyle(color: AppColors.blueText, fontSize: 28),
+              str.app_name,
+              style: AppColors.primaryTextStyleTitle,
             ),
           ),
         ),
@@ -112,7 +112,7 @@ class IntroState extends BasePageState<Intro> with Base {
           margin:
               EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.1),
           child: RoundButton(
-              title: s.sign_up,
+              title: str.sign_up,
               // bgColor: true,
               // loading: authViewModel.loading,
               onPressed: () {
@@ -123,7 +123,7 @@ class IntroState extends BasePageState<Intro> with Base {
           margin:
               EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.02),
           child: RoundButton(
-              title: s.login,
+              title: str.login,
               bgColor: true,
               // loading: authViewModel.loading,
               onPressed: () {
@@ -140,7 +140,7 @@ class IntroState extends BasePageState<Intro> with Base {
                     margin:
                     EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.02, right: 5),
                     child: RoundButton(
-                        title: isLight ? s.light_theme : s.dark_theme,
+                        title: isLight ? str.light_theme : str.dark_theme,
                         bgColor: true,
                         // loading: authViewModel.loading,
                         onPressed: () {
@@ -162,7 +162,7 @@ class IntroState extends BasePageState<Intro> with Base {
                     margin:
                     EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.02, left: 5),
                     child: RoundButton(
-                        title: isEnglish ? s.english : s.hindi,
+                        title: isEnglish ? str.english : str.hindi,
                         bgColor: true,
                         // loading: authViewModel.loading,
                         onPressed: () {
@@ -220,10 +220,7 @@ class Pages extends StatelessWidget {
                 child: Text(
                   text,
                   textAlign: TextAlign.center,
-                  style: const TextStyle(
-                      fontSize: 14,
-                      color: AppColors.black,
-                      fontWeight: FontWeight.w500),
+                  style: AppColors.primaryTextStyleBold
                 ),
               ),
             ]),
