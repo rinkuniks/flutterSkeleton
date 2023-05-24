@@ -10,6 +10,7 @@ import '../generated/l10n.dart';
 import '../res/components/AppTextField.dart';
 import '../res/components/LocalLang.dart';
 import '../res/components/round_button.dart';
+import '../utils/routes/routes_name.dart';
 import '../view_model/auth_view_model.dart';
 
 class LoginView extends BasePage {
@@ -173,8 +174,7 @@ class _LoginViewState extends BasePageState<LoginView> with Base {
                                       .setLocal(
                                     "en",
                                   ); */
-                                  Provider.of<LocalLang>(context, listen: false)
-                                      .setThemeMode(ThemeMode.light);
+                                 Navigator.pushNamed(context, RoutesName.BottomNavi);
                                   // context.setLocale(Locale('hi'));
                                   //   Navigator.pushNamed(context, RoutesName.signUp);
                                   //  Navigator.pushNamed(context, RoutesName.videoPlayer);

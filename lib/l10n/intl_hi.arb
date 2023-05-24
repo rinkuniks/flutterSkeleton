@@ -17,5 +17,10 @@
     "light_theme":"Light Theme",
     "dark_theme":"Dark Theme",
     "hindi":"Hindi Lang",
-    "english":"English Lang"
+    "english":"English Lang",
+    "home":"Home",
+        "my_courses" :"My Courses",
+        "messages":"Messages",
+        "notifications":"Notifications",
+        "profile":"Profile"
 }
