@@ -5,14 +5,14 @@ import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
 
-import '../base/base_page.dart';
-import '../generated/assets.dart';
+import '../../base/base_page.dart';
+import '../../generated/assets.dart';
 
-import '../generated/l10n.dart';
-import '../res/color.dart';
-import '../res/components/AppTextField.dart';
-import '../res/components/round_button.dart';
-import '../utils/utils.dart';
+import '../../generated/l10n.dart';
+import '../../res/color.dart';
+import '../../res/components/AppTextField.dart';
+import '../../res/components/round_button.dart';
+import '../../utils/utils.dart';
 
 /// Created by Sawan Kumar on 12/05/23.
 
@@ -74,7 +74,7 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
                     children: <Widget>[
                       Text(
                         s.create_an_account,
-                        style: AppColors.primaryBlackTextStyleBold
+                        style: AppColors.primaryTextStyleBlackBold
                       ),
                       Container(
                         margin: EdgeInsets.only(top: 10),

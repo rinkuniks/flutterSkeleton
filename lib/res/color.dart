@@ -28,20 +28,20 @@ class AppColors {
     fontSize: 20.0,
   );
 
-  static const TextStyle primaryBlackTextStyle = TextStyle(
-    color: AppColors.black,
-    fontSize: 20.0,
-  );
-
-  static const TextStyle primaryBlackTextStyleBold = TextStyle(
-    color: AppColors.black,
+  static const TextStyle primaryTextStyleBold = TextStyle(
+    color: AppColors.blueText,
     fontSize: 20.0,
     fontWeight: FontWeight.w500
   );
 
-  static const TextStyle primaryTextStyleBold = TextStyle(
+  static const TextStyle primaryTextStyleBlack = TextStyle(
     color: AppColors.black,
-    fontSize: 14.0,
+    fontSize: 20.0,
+  );
+
+  static const TextStyle primaryTextStyleBlackBold = TextStyle(
+    color: AppColors.black,
+    fontSize: 20.0,
     fontWeight: FontWeight.w500
   );
 

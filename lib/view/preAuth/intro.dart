@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:mvvm/base/base_page.dart';
 import 'package:provider/provider.dart';
 
-import '../generated/assets.dart';
-import '../generated/l10n.dart';
-import '../res/color.dart';
-import '../res/components/LocalLang.dart';
-import '../res/components/round_button.dart';
-import '../utils/routes/routes_name.dart';
+import '../../generated/assets.dart';
+import '../../generated/l10n.dart';
+import '../../res/color.dart';
+import '../../res/components/LocalLang.dart';
+import '../../res/components/round_button.dart';
+import '../../utils/routes/routes_name.dart';
 
 class Intro extends BasePage {
   const Intro({Key? key}) : super(key: key);
@@ -220,7 +220,7 @@ class Pages extends StatelessWidget {
                 child: Text(
                   text,
                   textAlign: TextAlign.center,
-                  style: AppColors.primaryTextStyleBold
+                  style: AppColors.primaryTextStyleBlackBold
                 ),
               ),
             ]),

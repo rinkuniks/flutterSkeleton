@@ -36,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
             },
             child: const Text(
               'Logout',
-              style: AppColors.primaryBlackTextStyle,
+              style: AppColors.primaryTextStyleBlackBold,
             )),
       ]),
       body: ChangeNotifierProvider<HomeViewViewModel>(

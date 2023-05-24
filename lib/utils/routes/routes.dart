@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:mvvm/view/splash_view.dart';
+import 'package:mvvm/view/preAuth/splash_view.dart';
 
 import '../../res/components/videoPlayer.dart';
-import '../../view/home_screen.dart';
-import '../../view/intro.dart';
-import '../../view/login_view.dart';
-import '../../view/signup_view.dart';
+import '../../view/dashboard/home_screen.dart';
+import '../../view/preAuth/intro.dart';
+import '../../view/auth/login_view.dart';
+import '../../view/auth/signup_view.dart';
 import 'routes_name.dart';
 
 /// Created by Sawan Kumar on 12/05/23.

@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:mvvm/res/color.dart';
 import 'package:provider/provider.dart';
 
-import '../base/base_page.dart';
-import '../base/theme/DarkThemeProvider.dart';
-import '../generated/assets.dart';
-import '../generated/l10n.dart';
+import '../../base/base_page.dart';
+import '../../base/theme/DarkThemeProvider.dart';
+import '../../generated/assets.dart';
+import '../../generated/l10n.dart';
 
-import '../res/components/AppTextField.dart';
-import '../res/components/LocalLang.dart';
-import '../res/components/round_button.dart';
-import '../view_model/auth_view_model.dart';
+import '../../res/components/AppTextField.dart';
+import '../../res/components/LocalLang.dart';
+import '../../res/components/round_button.dart';
+import '../../view_model/auth_view_model.dart';
 
 class LoginView extends BasePage {
   const LoginView({Key? key}) : super(key: key);
