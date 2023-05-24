@@ -17,6 +17,7 @@ class AppColors {
   static const Color grayLine = Color(0xFFECECEE);
   static const Color backIcon = Color(0xFFA0A0A0);
 
+
 //Strings
   static const TextStyle primaryTextStyleTitle = TextStyle(
     color: AppColors.blueText,
