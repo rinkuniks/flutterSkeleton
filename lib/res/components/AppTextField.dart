@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../color.dart';
+import '../appColors.dart';
 
 class AppTextField extends StatefulWidget {
   AppTextField({
@@ -130,7 +130,7 @@ class _AppTextFieldState extends State<AppTextField> {
                 // prefixIconConstraints:BoxConstraints(maxWidth: 40)),
                 counterText: "",
                 // prefixStyle: TextStyle(),
-                fillColor: widget.textFieldColor ?? AppColors.white,
+                fillColor: widget.textFieldColor ?? MyColors.white,
                 contentPadding:
                     const EdgeInsets.only(left: 15, right: 15, top: 13),
                 isDense: false,
@@ -156,7 +156,7 @@ class _AppTextFieldState extends State<AppTextField> {
                 filled: true,
                 hintText: widget.hintText,
                 hintStyle:
-                    const TextStyle(color: AppColors.logInText, fontSize: 14),
+                    const TextStyle(color: MyColors.logInText, fontSize: 14),
                 labelText: widget.labelText,
                 // labelStyle: TextStyle(color: Palette.borderStroke,fontSize: 14,),hintMaxLines: 2,
                 // alignLabelWithHint: true,
@@ -179,7 +179,7 @@ class _AppTextFieldState extends State<AppTextField> {
                               widget.obSecure != null && widget.obSecure!
                                   ? Icons.visibility_off
                                   : Icons.visibility,
-                              color: AppColors.logInText,
+                              color: MyColors.logInText,
                             ),
                           ),
               ),

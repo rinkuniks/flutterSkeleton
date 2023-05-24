@@ -25,7 +25,7 @@ class Routes {
         return MaterialPageRoute(builder: (BuildContext context) => MyCourse());
       case RoutesName.message:
         return MaterialPageRoute(
-            builder: (BuildContext context) => MessageSereen());
+            builder: (BuildContext context) => MessageScreen());
       case RoutesName.notifications:
         return MaterialPageRoute(
             builder: (BuildContext context) => NotificationScreen());
@@ -33,7 +33,7 @@ class Routes {
         return MaterialPageRoute(builder: (BuildContext context) => Profile());
       case RoutesName.BottomNavi:
         return MaterialPageRoute(
-            builder: (BuildContext context) => BottomNavi());
+            builder: (BuildContext context) => BottomNavigation());
       case RoutesName.videoPlayer:
         return MaterialPageRoute(
             builder: (BuildContext context) => const VideoPlayer());

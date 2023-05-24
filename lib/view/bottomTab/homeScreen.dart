@@ -1,16 +1,12 @@
-import 'dart:ui';
-
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
 import '../../generated/assets.dart';
-import '../../res/color.dart';
-
-void main() {
-  runApp(Home());
-}
+import '../../res/appColors.dart';
 
 class Home extends StatelessWidget  {
+  const Home({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -41,14 +37,14 @@ class HomeView extends StatelessWidget {
   ];
 
 
-  Home Header = Home();
+  Home header = const Home();
  
-  HomeView() {
+  HomeView({super.key}) {
     print("Testing constructions -------------------");
   }
 
   topCourse() {
-    return (SingleChildScrollView(
+    return (const SingleChildScrollView(
       physics: ScrollPhysics(),
       child: Column(
         children: <Widget>[
@@ -59,7 +55,9 @@ class HomeView extends StatelessWidget {
   }
 
     onIconTab(){
-print("ty-------------------------");
+if (kDebugMode) {
+  print("ty-------------------------");
+}
     }
 
   @override
@@ -74,13 +72,13 @@ print("ty-------------------------");
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           // Header.commonHeader(),
           Padding(
-            padding: EdgeInsets.fromLTRB(20, 40, 20, 10),
+            padding: const EdgeInsets.fromLTRB(20, 40, 20, 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text(
+                 Text(
                   "Hi, Bhavesh Raja",
-                  style: TextStyle(fontSize: 20, color: Colors.black),
+                  style: MyColors.customTextStyleBold(MyColors.black, 20, FontWeight.w500),
                 ),
                 Row(
                   children: [
@@ -91,12 +89,12 @@ print("ty-------------------------");
                       child: Container(
                         height: 20,
                         width: 20,
-                        margin: EdgeInsets.only(right: 15),
+                        margin: const EdgeInsets.only(right: 15),
                         child: SvgPicture.asset(Assets.assetsNotification),
                       ),
                     ),
                     InkWell(
-                      child: Container(
+                      child: SizedBox(
                         height: 20,
                         width: 20,
                         child:SvgPicture.asset(Assets.assetsQuestionMark),
@@ -108,17 +106,17 @@ print("ty-------------------------");
             ),
           ),
           Padding(
-            padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+            padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
             child: Container(
-              margin: EdgeInsets.only(top: 0, bottom: 10),
-              child: const Text(
+              margin: const EdgeInsets.only(top: 0, bottom: 10),
+              child:  Text(
                 "Lorem ipsum dolor",
-                style: TextStyle(fontSize: 14, color: Colors.grey),
+                style: MyColors.customTextStyle(MyColors.grey, 14)
               ),
             ),
           ),
           Padding(
-            padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+            padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -137,11 +135,7 @@ print("ty-------------------------");
                           const EdgeInsets.symmetric(horizontal: 15.0),
                       /* -- Text and Icon -- */
                       hintText: "Search...",
-                      hintStyle: const TextStyle(
-                        fontSize: 18,
-                        color: Color(0xFFB3B1B1),
-                      ),
-
+                      hintStyle: MyColors.customTextStyle(const Color(0xFFB3B1B1), 18),
                       /* -- Border Styling -- */
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(5.0),
@@ -171,9 +165,9 @@ print("ty-------------------------");
             ),
           ),
           Container(
-            color: Color.fromARGB(248, 225, 218, 213),
+            color: const Color.fromARGB(248, 225, 218, 213),
             height: 60,
-            margin: EdgeInsets.only(top: 20, bottom: 20),
+            margin: const EdgeInsets.only(top: 20, bottom: 20),
             padding: const EdgeInsets.only(
               right: 20,
               left: 20,
@@ -181,11 +175,11 @@ print("ty-------------------------");
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text(
-                  'Finesh your profile to get premium\ncontent for free',
-                  style: TextStyle(fontSize: 14, color: Color(0xffF8A848)),
+                 Text(
+                  'Finish your profile to get premium\ncontent for free',
+                  style: MyColors.customTextStyle(const Color(0xffF8A848), 14),
                 ),
-                Container(
+                SizedBox(
                     height: 20,
                     width: 20,
                     child: Image.asset('assets/back.png'))
@@ -193,84 +187,81 @@ print("ty-------------------------");
             ),
           ),
           Padding(
-            padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+            padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
             child: Row(
               children: [
                 Text(
                   'Chose your other interests',
-                  style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black),
+                  style: MyColors.customTextStyleBold(MyColors.black, 14, FontWeight.bold),
                 )
               ],
             ),
           ),
           Padding(
-            padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+            padding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
             child: Row(
               children: [
                 Container(
-                  margin: EdgeInsets.only(top: 10, bottom: 10),
+                  margin: const EdgeInsets.only(top: 10, bottom: 10),
                   padding:
-                      EdgeInsets.only(left: 20, top: 10, bottom: 10, right: 20),
-                  child: Text(
-                    'AI',
-                    // textScaleFactor: 2,
-                    style: TextStyle(color: Colors.black, fontSize: 14),
-                  ),
+                      const EdgeInsets.only(left: 20, top: 10, bottom: 10, right: 20),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
                     color: Colors.grey,
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(
                         color: Colors.grey,
                         spreadRadius: 1,
                       ),
                     ],
                   ),
+                  child: Text(
+                    'AI',
+                    // textScaleFactor: 2,
+                    style: MyColors.customTextStyle(MyColors.black, 14),
+                  ),
                   // height: 50,
                 ),
                 Container(
                   margin:
-                      EdgeInsets.only(top: 10, left: 20, right: 20, bottom: 10),
+                      const EdgeInsets.only(top: 10, left: 20, right: 20, bottom: 10),
                   padding:
-                      EdgeInsets.only(left: 10, top: 10, bottom: 10, right: 10),
-                  child: Text(
-                    'Machine Learning',
-                    //  textScaleFactor: 2,
-                    style: TextStyle(color: Colors.white, fontSize: 14),
-                  ),
+                      const EdgeInsets.all(10),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
-                    color: Color(0xff3433F2),
-                    boxShadow: [
+                    color: const Color(0xff3433F2),
+                    boxShadow: const [
                       BoxShadow(
                         color: Color(0xff3433F2),
                         spreadRadius: 1,
                       ),
                     ],
                   ),
+                  child: Text(
+                    'Machine Learning',
+                    //  textScaleFactor: 2,
+                    style: MyColors.customTextStyle(MyColors.white, 14),
+                  ),
                   // height: 50,
                 ),
                 Container(
                   margin: EdgeInsets.only(top: 10, bottom: 10),
                   padding:
                       EdgeInsets.only(left: 10, top: 10, bottom: 10, right: 10),
-                  child: Text(
-                    'Paython',
-                    //  textScaleFactor: 2,
-                    style: TextStyle(color: Colors.black, fontSize: 14),
-                  ),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
                     color: Colors.grey,
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(
                         color: Colors.grey,
                         spreadRadius: 1,
                       ),
                     ],
+                  ),
+                  child: Text(
+                    'Python',
+                    //  textScaleFactor: 2,
+                    style: MyColors.customTextStyle(MyColors.black, 14),
                   ),
                   // height: 50,
                 ),
@@ -284,7 +275,7 @@ print("ty-------------------------");
             width: double.infinity,
           ),
           Padding(
-              padding: EdgeInsets.fromLTRB(20, 15, 0, 15), child: topCourse())
+              padding: const EdgeInsets.fromLTRB(20, 15, 0, 15), child: topCourse())
         ]),
       ),
     );

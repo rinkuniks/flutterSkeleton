@@ -9,7 +9,7 @@ import '../../base/base_page.dart';
 import '../../generated/assets.dart';
 
 import '../../generated/l10n.dart';
-import '../../res/color.dart';
+import '../../res/appColors.dart';
 import '../../res/components/AppTextField.dart';
 import '../../res/components/round_button.dart';
 import '../../utils/utils.dart';
@@ -74,13 +74,13 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
                     children: <Widget>[
                       Text(
                         s.create_an_account,
-                        style: AppColors.primaryTextStyleBlackBold
+                        style: MyColors.customTextStyleBold(MyColors.black, 20, FontWeight.w500)
                       ),
                       Container(
                         margin: EdgeInsets.only(top: 10),
                         child: Text(
                           s.welcome_to_excelR,
-                          style: AppColors.secondaryGreyTextStyle,
+                          style: MyColors.customTextStyle(MyColors.grey, 14),
                         ),
                       ),
 
@@ -90,7 +90,7 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
                             top: MediaQuery.of(context).size.height * 0.05),
                         child: Text(
                           s.name,
-                          style: AppColors.secondaryGreyTextStyleBold,
+                          style: MyColors.customTextStyle(MyColors.grey, 16),
                         ),
                       ),
                       AppTextField(
@@ -119,7 +119,7 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
                         margin: EdgeInsets.only(top: 10),
                         child: Text(
                           s.email,
-                          style: AppColors.secondaryGreyTextStyleBold
+                          style: MyColors.customTextStyle(MyColors.grey, 16)
                         ),
                       ),
                       AppTextField(
@@ -147,7 +147,7 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
                         margin: EdgeInsets.only(top: 10),
                         child: Text(
                           s.mobile,
-                          style: AppColors.secondaryGreyTextStyleBold,
+                          style: MyColors.customTextStyle(MyColors.grey, 16),
                         ),
                       ),
                       AppTextField(
@@ -176,7 +176,7 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
                         margin: EdgeInsets.only(top: 10),
                         child: Text(
                           s.password,
-                          style: AppColors.secondaryGreyTextStyleBold,
+                          style: MyColors.customTextStyle(MyColors.grey, 16),
                         ),
                       ),
                       AppTextField(
@@ -226,13 +226,13 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
                       SizedBox(height: 10),
                       Container(
                         margin: EdgeInsets.only(top: 15, bottom: 20),
-                        color: AppColors.grayLine,
+                        color: MyColors.grayLine,
                         height: 1,
                       ),
                       Center(
                         child: Text(
                           s.sign_up_with,
-                          style: AppColors.secondaryGreyTextStyleBold
+                          style: MyColors.customTextStyle(MyColors.grey, 16)
                         ),
                       ),
 
@@ -246,7 +246,7 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
                               height: 45,
                               decoration: BoxDecoration(
                                 border: Border.all(
-                                    color: AppColors.grayLine,
+                                    color: MyColors.grayLine,
                                     width: 1.0,
                                     style: BorderStyle.solid),
                                 borderRadius: BorderRadius.circular(10),

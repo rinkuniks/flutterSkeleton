@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../base/base_page.dart';
+import '../../res/appColors.dart';
 import '../../res/color.dart';
 import '../../view_model/services/splash_services.dart';
 
@@ -35,7 +36,7 @@ class _SplashViewState extends BasePageState<SplashView> with Base{
       body: Center(
           child: Text(
             'ExcelR',
-            style: AppColors.primaryTextStyleTitle,
+            style: AppColors.splashTextStyle,
           )),
     );
   }
