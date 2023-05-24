@@ -17,7 +17,7 @@ class Routes {
         return MaterialPageRoute(
             builder: (BuildContext context) => const VideoPlayer());
       case RoutesName.intor:
-        return MaterialPageRoute(builder: (BuildContext context) => Intro());
+        return MaterialPageRoute(builder: (BuildContext context) => const Intro());
       case RoutesName.splash:
         return MaterialPageRoute(
             builder: (BuildContext context) => const SplashView());
