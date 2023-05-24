@@ -4,10 +4,8 @@ import 'package:mvvm/res/color.dart';
 import 'package:provider/provider.dart';
 
 import '../../base/base_page.dart';
-import '../../base/theme/DarkThemeProvider.dart';
 import '../../generated/assets.dart';
 import '../../generated/l10n.dart';
-
 import '../../res/components/AppTextField.dart';
 import '../../res/components/LocalLang.dart';
 import '../../res/components/round_button.dart';

@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:mvvm/view/bottomTab/bottomNavigations.dart';
+import 'package:mvvm/view/bottomTab/homeScreen.dart';
+import 'package:mvvm/view/bottomTab/messageSereen.dart';
+import 'package:mvvm/view/bottomTab/myCoursesScreen.dart';
+import 'package:mvvm/view/bottomTab/notificationScreen.dart';
+import 'package:mvvm/view/bottomTab/profileScreen.dart';
 import 'package:mvvm/view/preAuth/splash_view.dart';
-
 import '../../res/components/videoPlayer.dart';
-import '../../view/bottomTab/bottomNavigations.dart';
-import '../../view/bottomTab/homeScreen.dart';
-import '../../view/bottomTab/messageSereen.dart';
-import '../../view/bottomTab/myCoursesScreen.dart';
-import '../../view/bottomTab/notificationScreen.dart';
-import '../../view/bottomTab/profileScreen.dart';
-import '../../view/dashboard/home_screen.dart';
-import '../../view/preAuth/intro.dart';
 import '../../view/auth/login_view.dart';
 import '../../view/auth/signup_view.dart';
+import '../../view/dashboard/home_screen.dart';
+import '../../view/preAuth/intro.dart';
 import 'routes_name.dart';
 
 /// Created by Sawan Kumar on 12/05/23.
@@ -53,7 +52,7 @@ class Routes {
             builder: (BuildContext context) => const SignUpView());
       default:
         return MaterialPageRoute(
-            builder: (BuildContext constext) => const Scaffold(
+            builder: (BuildContext context) => const Scaffold(
                   body: Center(
                     child: Text('No Route found aa'),
                   ),
