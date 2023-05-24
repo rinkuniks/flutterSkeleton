@@ -9,9 +9,9 @@ import 'routes/routes.dart';
 import 'utils/routes/routes_name.dart';
 import 'view_model/auth_view_model.dart';
 import 'view_model/user_view_model.dart';
-
+//import 'package:firebase_core/firebase_core.dart';
 void main() async {
-
+//  await Firebase.initializeApp();
   runApp(
     MultiProvider(
       providers: [
