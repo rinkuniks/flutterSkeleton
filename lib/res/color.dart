@@ -24,7 +24,7 @@ class AppColors {
     fontSize: 42.0,
   );
 
-  static const TextStyle primaryTextStyle = TextStyle(
+  static const TextStyle primaryTextStyle20 = TextStyle(
     color: AppColors.blueText,
     fontSize: 20.0,
   );

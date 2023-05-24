@@ -46,6 +46,7 @@ dependencies:
   flutter_lints: 2.0.0
   vimeo_video_player: 0.0.9
   flutter_svg: 1.1.1+1
+  firebase_auth: 4.6.1
 
 dev_dependencies:
   flutter_test:

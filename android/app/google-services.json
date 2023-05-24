@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "921057081738",
+    "project_id": "excelr-dev",
+    "storage_bucket": "excelr-dev.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:921057081738:android:fae2e474ae572d26d4f073",
+        "android_client_info": {
+          "package_name": "com.excelr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "921057081738-blhtm94rgqk574rlkgrng7ihrqb1o8rc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOqRfLBqCo5UgnW1UBq3__wv6H75TqvZU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "921057081738-blhtm94rgqk574rlkgrng7ihrqb1o8rc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
