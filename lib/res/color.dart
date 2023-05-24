@@ -24,16 +24,9 @@ class AppColors {
       fontSize: 42.0,
       fontFamily: 'SF-Pro-Display');
 
-<<<<<<< HEAD
   // Blue Color
   static const TextStyle textStyleBlue20 =
       TextStyle(color: AppColors.blueText, fontSize: 20.0);
-=======
-  static const TextStyle primaryTextStyle20 = TextStyle(
-    color: AppColors.blueText,
-    fontSize: 20.0,
-  );
->>>>>>> 2068124b2db4fe8deeb745b0b8b7cc36d42a166a
 
   static const TextStyle textStyleBlue16 =
       TextStyle(color: AppColors.blueText, fontSize: 16.0);

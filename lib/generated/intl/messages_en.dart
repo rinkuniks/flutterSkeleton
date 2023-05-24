@@ -31,6 +31,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "forgot_password":
             MessageLookupByLibrary.simpleMessage("Forgot your password?"),
         "hindi": MessageLookupByLibrary.simpleMessage("Hindi Lang"),
+        "home": MessageLookupByLibrary.simpleMessage("Home"),
         "into_title1": MessageLookupByLibrary.simpleMessage(
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor2"),
         "into_title2": MessageLookupByLibrary.simpleMessage(
@@ -39,9 +40,13 @@ class MessageLookup extends MessageLookupByLibrary {
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor1"),
         "light_theme": MessageLookupByLibrary.simpleMessage("Light Theme"),
         "login": MessageLookupByLibrary.simpleMessage("Log In"),
+        "messages": MessageLookupByLibrary.simpleMessage("Messages"),
         "mobile": MessageLookupByLibrary.simpleMessage("Mobile"),
+        "my_courses": MessageLookupByLibrary.simpleMessage("My Courses"),
         "name": MessageLookupByLibrary.simpleMessage("Name"),
+        "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "sign_up": MessageLookupByLibrary.simpleMessage("Sign Up"),
         "sign_up_with": MessageLookupByLibrary.simpleMessage("or sign up with"),
         "welcome_back": MessageLookupByLibrary.simpleMessage("Welcome back"),
