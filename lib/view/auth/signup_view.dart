@@ -1,11 +1,14 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../base/base_page.dart';
 import '../../generated/assets.dart';
 import '../../generated/l10n.dart';
+import '../../provider/SocialLoginHelper.dart';
+import '../../provider/constant.dart';
 import '../../res/color.dart';
 import '../../res/components/AppTextField.dart';
 import '../../res/components/round_button.dart';
@@ -21,6 +24,8 @@ class SignUpView extends BasePage {
 }
 
 class _SignUpViewState extends BasePageState<SignUpView> with Base {
+    SocialLoginHelper auth = SocialLoginHelper();
+
   final ValueNotifier<bool> _obsecurePassword = ValueNotifier<bool>(true);
   TextEditingController emailC = TextEditingController();
   TextEditingController passwordC = TextEditingController();
@@ -40,6 +45,26 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
   bool isAppBarNeeded() {
     // TODO: implement isAppBarNeeded
     return false;
+  }
+
+  socialLoginApiHandler(loginType) async {
+    await FirebaseAuth.instance.signOut();
+    // if (loginType == Constant.LOGIN_TYPE_FACEBOOK) {
+    //   UserCredential? userCred = await auth.signInFB(context);
+
+    //   await loginApiHandler(Constant.LOGIN_TYPE_FACEBOOK, userCred);
+    //   // Utility.logInDebug("FINISHED");
+    // }
+    if (loginType == Constant.LOGIN_TYPE_GOOGLE) {
+      UserCredential? userCred = await auth.signInWithGoogle(context);
+                print("---------------------------google login2 ${userCred}");
+
+     // await loginApiHandler(Constant.LOGIN_TYPE_GOOGLE, userCred);
+    }
+    // if (loginType == Constant.LOGIN_TYPE_APPLE) {
+    //   UserCredential? userCred = await auth.signInWithApple(context);
+    //   await loginApiHandler(Constant.LOGIN_TYPE_APPLE, userCred);
+    // }
   }
 
   @override
@@ -237,7 +262,7 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
                         margin: EdgeInsets.only(top: 20),
                         child: InkWell(
                           onTap: () {
-                            print("Sign up click");
+                            socialLoginApiHandler(Constant.LOGIN_TYPE_GOOGLE);
                           },
                           child: Container(
                               height: 45,
@@ -253,7 +278,7 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
                                   child: SizedBox(
                                 height: 22,
                                 width: 22,
-                                child: Image.asset(Assets.assetsGoogle),
+                                child: Image.asset(Assets.assetsGoogleIcon),
                               ))),
                         ),
                       ),

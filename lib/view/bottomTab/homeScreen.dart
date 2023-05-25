@@ -44,9 +44,9 @@ class HomeView extends StatelessWidget {
   }
 
   topCourse() {
-    return (const SingleChildScrollView(
+    return ( SingleChildScrollView(
       physics: ScrollPhysics(),
-      child: Column(
+      child:  Column(
         children: <Widget>[
           Text('Hey'),
         ],
