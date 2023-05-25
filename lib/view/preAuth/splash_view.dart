@@ -19,7 +19,7 @@ class _SplashViewState extends BasePageState<SplashView> with Base{
   void initState() {
     // TODO: implement initState
     super.initState();
-   // splashServices.checkAuthentication(context);
+    splashServices.checkAuthentication(context);
   }
 
   @override

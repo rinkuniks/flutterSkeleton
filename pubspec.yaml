@@ -47,6 +47,11 @@ dependencies:
   vimeo_video_player: 0.0.9
   flutter_svg: 1.1.1+1
   firebase_auth: 4.6.1
+  firebase_core: 2.13.0
+  # firebase_messaging: 14.6.1
+  google_sign_in: 5.4.1
+  flutter_login_facebook: 1.8.0
+  sign_in_with_apple: 4.3.0
 
 dev_dependencies:
   flutter_test:
