@@ -1,0 +1,20 @@
+#  Template NodeJS build
+#  This template allows you to validate your NodeJS code.
+#  The workflow allows running tests and code linting on the default branch.
+
+image: node:16.12.0
+
+pipelines:
+  branches:
+    custmer:
+      - step:
+          trigger: automatic
+          caches:
+            - node
+          script: # Modify the commands below to build your repository.
+          - npm install -g sonarqube-scanner
+          - sonar-scanner
+            -Dsonar.projectKey= ExcelR-Mobileapp-Flutter
+            -Dsonar.sources=. 
+            -Dsonar.host.url=https://sonarqube.affle.com
+            -Dsonar.login=bd86728c044fa41117bbd0400a80f9722961e251
