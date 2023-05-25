@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../generated/assets.dart';
-import '../res/color.dart';
+import '../res/appColors.dart';
 import '../utils/utils.dart';
 import 'loading.dart';
 
@@ -91,7 +91,7 @@ mixin Base<P extends BasePage> on BasePageState<P> {
               // the App.build method, and use it to set our appbar title.
               // leading: SvgPicture.asset(Assets.assetsTopbarBack,height: 10, width: 10,),
               iconTheme: const IconThemeData(
-                  color: AppColors.backIcon,
+                  color: MyColors.backIcon,
 
               ),
               leading: Transform.scale(
@@ -104,7 +104,7 @@ mixin Base<P extends BasePage> on BasePageState<P> {
               ),
 
               title:  Text(topBarTitle(), style: const TextStyle(
-                  color: AppColors.black
+                  color: MyColors.black
               )),
               /*actions: [
                 IconButton(
@@ -112,7 +112,7 @@ mixin Base<P extends BasePage> on BasePageState<P> {
                   icon: Icon(Icons.call),
                 ),
               ],*/
-              backgroundColor: AppColors.white,
+              backgroundColor: MyColors.white,
 
             ) : null,
             body: SafeArea(

@@ -1,28 +1,20 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:mvvm/generated/l10n.dart';
-
 import '../../generated/assets.dart';
-import '../../res/color.dart';
+import '../../res/appColors.dart';
 import 'homeScreen.dart';
 import 'messageSereen.dart';
 import 'myCoursesScreen.dart';
 import 'notificationScreen.dart';
 import 'profileScreen.dart';
 
-void main() => runApp(BottomNavi());
+class BottomNavigation extends StatelessWidget {
 
-class BottomNavi extends StatelessWidget {
-  // const MyApp({super.key});
-
-  static const String _title = 'Flutter Code Sample';
+  const BottomNavigation({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      title: _title,
       home: MyStatefulWidget(),
     );
   }
@@ -37,13 +29,11 @@ class MyStatefulWidget extends StatefulWidget {
 
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
 
  final _pageOptions = [
   Home(),
   MyCourse(),
-  MessageSereen(),
+  MessageScreen(),
   NotificationScreen(),
   Profile(),
   ];
@@ -67,29 +57,29 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       bottomNavigationBar: BottomNavigationBar(
         items:  <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon:  SvgPicture.asset(Assets.assetsHomeIcon, color: Colors.grey,),
+            icon:  SvgPicture.asset(Assets.assetsHomeIcon, color: MyColors.grey,),
             label: 'Home',
-            activeIcon: SvgPicture.asset(Assets.assetsHomeIcon,color: AppColors.blueText),
+            activeIcon: SvgPicture.asset(Assets.assetsHomeIcon,color: MyColors.blueText),
 
           ),
           BottomNavigationBarItem(
             icon:  SvgPicture.asset(Assets.assetsMyCourses),
-            activeIcon: SvgPicture.asset(Assets.assetsMyCourses,color: AppColors.blueText),
+            activeIcon: SvgPicture.asset(Assets.assetsMyCourses,color: MyColors.blueText),
             label: 'My Course',
           ),
           BottomNavigationBarItem(
             icon:  SvgPicture.asset(Assets.assetsMessage),
-            activeIcon: SvgPicture.asset(Assets.assetsMessage,color: AppColors.blueText),
+            activeIcon: SvgPicture.asset(Assets.assetsMessage,color: MyColors.blueText),
             label: 'Message',
           ),
           BottomNavigationBarItem(
             icon:  SvgPicture.asset(Assets.assetsNotification),
-            activeIcon: SvgPicture.asset(Assets.assetsNotification,color: AppColors.blueText),
+            activeIcon: SvgPicture.asset(Assets.assetsNotification,color: MyColors.blueText),
             label: 'Notifications',
           ),
           BottomNavigationBarItem(
             icon:  SvgPicture.asset(Assets.assetsProfile),
-            activeIcon: SvgPicture.asset(Assets.assetsProfile,color: AppColors.blueText),
+            activeIcon: SvgPicture.asset(Assets.assetsProfile,color: MyColors.blueText),
             label: 'Profile',
           ),
         ],
@@ -97,7 +87,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         enableFeedback: false,
         showSelectedLabels: true, // Selected labels hide/show
         showUnselectedLabels: true, // Unselected labels hide/show
-        selectedItemColor: AppColors.blueText,
+        selectedItemColor: MyColors.blueText,
       //  selectedItemColor: Colors.amber[800],
       //  unselectedItemColor: Colors.black,
         onTap: _onItemTapped,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../color.dart';
+import '../appColors.dart';
 
 /// Created by Sawan Kumar on 12/05/23.
 
@@ -31,11 +31,11 @@ class RoundButton extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                    // side: BorderSide(color: AppColors.logInText),
                     borderRadius: BorderRadius.circular(5)),
-                color: AppColors.blueText,
+                color: MyColors.blueText,
                 onPressed: onPressed,
                 child: Text(
                   title,
-                  style: TextStyle(color: AppColors.white),
+                  style: TextStyle(color: MyColors.white),
                 ),
               ) 
 
@@ -43,13 +43,13 @@ class RoundButton extends StatelessWidget {
 
               MaterialButton(
                 shape: RoundedRectangleBorder(
-                   side: BorderSide(color: AppColors.logInText),
+                   side: BorderSide(color: MyColors.logInText),
                     borderRadius: BorderRadius.circular(5)),
-                color: AppColors.white,
+                color: MyColors.white,
                 onPressed: onPressed,
                 child: Text(
                   title,
-                  style: TextStyle(color: AppColors.logInText),
+                  style: TextStyle(color: MyColors.logInText),
                 ),
               )
               );

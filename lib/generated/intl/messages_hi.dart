@@ -31,6 +31,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "forgot_password":
             MessageLookupByLibrary.simpleMessage("अपना कूट शब्द भूल गए?"),
         "hindi": MessageLookupByLibrary.simpleMessage("Hindi Lang"),
+        "home": MessageLookupByLibrary.simpleMessage("Home"),
         "into_title1": MessageLookupByLibrary.simpleMessage(
             "ग्राहक खुद बहुत महत्वपूर्ण है, ग्राहक ग्राहक का अनुसरण करेगा, लेकिन मैं उसे उतना ही समय दूंगा2"),
         "into_title2": MessageLookupByLibrary.simpleMessage(
@@ -39,9 +40,13 @@ class MessageLookup extends MessageLookupByLibrary {
             "ग्राहक खुद बहुत महत्वपूर्ण है, ग्राहक ग्राहक का अनुसरण करेगा, लेकिन मैं उसे उतना ही समय दूंगा1"),
         "light_theme": MessageLookupByLibrary.simpleMessage("Light Theme"),
         "login": MessageLookupByLibrary.simpleMessage("लॉग इन करें"),
+        "messages": MessageLookupByLibrary.simpleMessage("Messages"),
         "mobile": MessageLookupByLibrary.simpleMessage("Mobile"),
+        "my_courses": MessageLookupByLibrary.simpleMessage("My Courses"),
         "name": MessageLookupByLibrary.simpleMessage("Name"),
+        "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
         "password": MessageLookupByLibrary.simpleMessage("पासवर्ड"),
+        "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "sign_up": MessageLookupByLibrary.simpleMessage("Sign Up"),
         "sign_up_with": MessageLookupByLibrary.simpleMessage("or sign up with"),
         "welcome_back":

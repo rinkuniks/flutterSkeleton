@@ -24,13 +24,13 @@ class Routes {
        case RoutesName.my_courses:
       return MaterialPageRoute(builder: (BuildContext context) => MyCourse());
        case RoutesName.message:
-      return MaterialPageRoute(builder: (BuildContext context) => MessageSereen());
+      return MaterialPageRoute(builder: (BuildContext context) => MessageScreen());
        case RoutesName.notifications:
       return MaterialPageRoute(builder: (BuildContext context) => NotificationScreen());
        case RoutesName.profile:
       return MaterialPageRoute(builder: (BuildContext context) => Profile());
       case RoutesName.BottomNavi:
-      return MaterialPageRoute(builder:(BuildContext context) => BottomNavi());
+      return MaterialPageRoute(builder:(BuildContext context) => BottomNavigation());
       case RoutesName.videoPlayer:
       return MaterialPageRoute(
             builder: (BuildContext context) => const VideoPlayer());

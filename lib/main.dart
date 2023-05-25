@@ -2,7 +2,7 @@ import 'dart:developer';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:mvvm/res/color.dart';
+import 'package:mvvm/res/appColors.dart';
 import 'package:provider/provider.dart';
 import 'generated/l10n.dart';
 import 'res/components/LocalLang.dart';
@@ -55,8 +55,8 @@ class _MyAppState extends State<MyApp> {
         ],
         supportedLocales: S.delegate.supportedLocales,
         themeMode: localLang.themeMode,
-        theme: AppColors.themeData(false, context),
-        darkTheme: AppColors.themeData(true, context),
+        theme: MyColors.themeData(false, context),
+        darkTheme: MyColors.themeData(true, context),
         initialRoute: RoutesName.splash,
         onGenerateRoute: Routes.generateRoute,
       );
