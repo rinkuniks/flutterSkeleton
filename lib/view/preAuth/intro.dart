@@ -1,10 +1,9 @@
+import 'package:ExcelR/res/color.dart';
 import 'package:flutter/material.dart';
-import 'package:mvvm/base/base_page.dart';
 import 'package:provider/provider.dart';
-
+import '../../base/base_page.dart';
 import '../../generated/assets.dart';
 import '../../generated/l10n.dart';
-import '../../res/appColors.dart';
 import '../../res/components/LocalLang.dart';
 import '../../res/components/round_button.dart';
 import '../../utils/routes/routes_name.dart';
@@ -61,7 +60,7 @@ class IntroState extends BasePageState<Intro> with Base {
           child: Center(
             child: Text(
               str.app_name,
-              style: MyColors.customTextStyleBold(MyColors.blueText, 42, FontWeight.w500),
+              style: Theme.of(context).textTheme.displayLarge
             ),
           ),
         ),
@@ -102,8 +101,8 @@ class IntroState extends BasePageState<Intro> with Base {
                       child: CircleAvatar(
                         radius: 7,
                         backgroundColor: _activePage == index
-                            ? MyColors.activeDot
-                            : MyColors.deActiveDot,
+                            ? AppColors.activeDot
+                            : AppColors.deActiveDot,
                       ),
                     ),
                   )),
@@ -220,7 +219,7 @@ class Pages extends StatelessWidget {
                 child: Text(
                   text,
                   textAlign: TextAlign.center,
-                  style: MyColors.customTextStyleBold(MyColors.black, 20, FontWeight.w500)
+                  style: Theme.of(context).textTheme.titleMedium,
                 ),
               ),
             ]),

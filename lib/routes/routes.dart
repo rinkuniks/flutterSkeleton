@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mvvm/view/preAuth/splash_view.dart';
 
 import '../res/components/videoPlayer.dart';
 import '../utils/routes/routes_name.dart';
@@ -11,8 +10,8 @@ import '../view/bottomTab/messageSereen.dart';
 import '../view/bottomTab/myCoursesScreen.dart';
 import '../view/bottomTab/notificationScreen.dart';
 import '../view/bottomTab/profileScreen.dart';
-import '../view/dashboard/home_screen.dart';
 import '../view/preAuth/intro.dart';
+import '../view/preAuth/splash_view.dart';
 
 /// Created by Sawan Kumar on 12/05/23.
 
@@ -42,9 +41,9 @@ class Routes {
       case RoutesName.splash:
         return MaterialPageRoute(
             builder: (BuildContext context) => const SplashView());
-      case RoutesName.home:
-        return MaterialPageRoute(
-            builder: (BuildContext context) => const HomeScreen());
+      // case RoutesName.home:
+      //   return MaterialPageRoute(
+      //       builder: (BuildContext context) => const HomeScreen());
       case RoutesName.login:
         return MaterialPageRoute(
             builder: (BuildContext context) => const LoginView());

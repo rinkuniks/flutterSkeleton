@@ -1,7 +1,7 @@
 import 'dart:developer';
+import 'package:ExcelR/res/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:mvvm/res/appColors.dart';
 import 'package:provider/provider.dart';
 import 'generated/l10n.dart';
 import 'res/components/LocalLang.dart';
@@ -52,9 +52,12 @@ class _MyAppState extends State<MyApp> {
           GlobalCupertinoLocalizations.delegate,
         ],
         supportedLocales: S.delegate.supportedLocales,
-        themeMode: localLang.themeMode,
-        theme: MyColors.themeData(false, context),
-        darkTheme: MyColors.themeData(true, context),
+        themeMode: ThemeMode.system,
+        theme: AppTheme.lightTheme,
+        darkTheme: AppTheme.darkTheme,
+        // themeMode: localLang.themeMode,
+        // theme: MyColors.themeData(false, context),
+        // darkTheme: MyColors.themeData(true, context),
         initialRoute: RoutesName.splash,
         onGenerateRoute: Routes.generateRoute,
       );

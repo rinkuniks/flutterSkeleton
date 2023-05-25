@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import '../../generated/assets.dart';
-import '../../res/appColors.dart';
+import '../../res/color.dart';
 
 class Home extends StatelessWidget  {
   const Home({super.key});
@@ -78,7 +78,7 @@ if (kDebugMode) {
               children: [
                  Text(
                   "Hi, Bhavesh Raja",
-                  style: MyColors.customTextStyleBold(MyColors.black, 20, FontWeight.w500),
+                  style: Theme.of(context).textTheme.titleLarge,
                 ),
                 Row(
                   children: [
@@ -111,7 +111,7 @@ if (kDebugMode) {
               margin: const EdgeInsets.only(top: 0, bottom: 10),
               child:  Text(
                 "Lorem ipsum dolor",
-                style: MyColors.customTextStyle(MyColors.grey, 14)
+                style: Theme.of(context).textTheme.titleSmall,
               ),
             ),
           ),
@@ -135,7 +135,7 @@ if (kDebugMode) {
                           const EdgeInsets.symmetric(horizontal: 15.0),
                       /* -- Text and Icon -- */
                       hintText: "Search...",
-                      hintStyle: MyColors.customTextStyle(const Color(0xFFB3B1B1), 18),
+                      hintStyle: Theme.of(context).textTheme.titleMedium,
                       /* -- Border Styling -- */
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(5.0),
@@ -175,9 +175,9 @@ if (kDebugMode) {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                 Text(
+                 const Text(
                   'Finish your profile to get premium\ncontent for free',
-                  style: MyColors.customTextStyle(const Color(0xffF8A848), 14),
+                  style: TextStyle(color: Color(0xffF8A848), fontSize: 14),
                 ),
                 SizedBox(
                     height: 20,
@@ -192,7 +192,7 @@ if (kDebugMode) {
               children: [
                 Text(
                   'Chose your other interests',
-                  style: MyColors.customTextStyleBold(MyColors.black, 14, FontWeight.bold),
+                  style: Theme.of(context).textTheme.titleLarge,
                 )
               ],
             ),
@@ -218,7 +218,7 @@ if (kDebugMode) {
                   child: Text(
                     'AI',
                     // textScaleFactor: 2,
-                    style: MyColors.customTextStyle(MyColors.black, 14),
+                    style: Theme.of(context).textTheme.titleMedium,
                   ),
                   // height: 50,
                 ),
@@ -237,10 +237,10 @@ if (kDebugMode) {
                       ),
                     ],
                   ),
-                  child: Text(
+                  child: const Text(
                     'Machine Learning',
                     //  textScaleFactor: 2,
-                    style: MyColors.customTextStyle(MyColors.white, 14),
+                    style: TextStyle(color: AppColors.white, fontSize: 14),
                   ),
                   // height: 50,
                 ),
@@ -261,7 +261,7 @@ if (kDebugMode) {
                   child: Text(
                     'Python',
                     //  textScaleFactor: 2,
-                    style: MyColors.customTextStyle(MyColors.black, 14),
+                    style: Theme.of(context).textTheme.titleMedium,
                   ),
                   // height: 50,
                 ),

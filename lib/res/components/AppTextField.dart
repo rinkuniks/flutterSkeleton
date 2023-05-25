@@ -1,6 +1,5 @@
+import 'package:ExcelR/res/color.dart';
 import 'package:flutter/material.dart';
-
-import '../appColors.dart';
 
 class AppTextField extends StatefulWidget {
   AppTextField({
@@ -130,7 +129,7 @@ class _AppTextFieldState extends State<AppTextField> {
                 // prefixIconConstraints:BoxConstraints(maxWidth: 40)),
                 counterText: "",
                 // prefixStyle: TextStyle(),
-                fillColor: widget.textFieldColor ?? MyColors.white,
+                fillColor: widget.textFieldColor ?? AppColors.white,
                 contentPadding:
                     const EdgeInsets.only(left: 15, right: 15, top: 13),
                 isDense: false,
@@ -156,7 +155,7 @@ class _AppTextFieldState extends State<AppTextField> {
                 filled: true,
                 hintText: widget.hintText,
                 hintStyle:
-                    const TextStyle(color: MyColors.logInText, fontSize: 14),
+                    const TextStyle(color: AppColors.logInText, fontSize: 14),
                 labelText: widget.labelText,
                 // labelStyle: TextStyle(color: Palette.borderStroke,fontSize: 14,),hintMaxLines: 2,
                 // alignLabelWithHint: true,
@@ -179,7 +178,7 @@ class _AppTextFieldState extends State<AppTextField> {
                               widget.obSecure != null && widget.obSecure!
                                   ? Icons.visibility_off
                                   : Icons.visibility,
-                              color: MyColors.logInText,
+                              color: AppColors.logInText,
                             ),
                           ),
               ),

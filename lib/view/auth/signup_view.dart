@@ -2,14 +2,11 @@
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-
 import 'package:provider/provider.dart';
-
 import '../../base/base_page.dart';
 import '../../generated/assets.dart';
-
 import '../../generated/l10n.dart';
-import '../../res/appColors.dart';
+import '../../res/color.dart';
 import '../../res/components/AppTextField.dart';
 import '../../res/components/round_button.dart';
 import '../../utils/utils.dart';
@@ -74,13 +71,13 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
                     children: <Widget>[
                       Text(
                         s.create_an_account,
-                        style: MyColors.customTextStyleBold(MyColors.black, 20, FontWeight.w500)
+                        style: Theme.of(context).textTheme.titleLarge,
                       ),
                       Container(
                         margin: EdgeInsets.only(top: 10),
                         child: Text(
                           s.welcome_to_excelR,
-                          style: MyColors.customTextStyle(MyColors.grey, 14),
+                          style: Theme.of(context).textTheme.labelLarge,
                         ),
                       ),
 
@@ -90,7 +87,7 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
                             top: MediaQuery.of(context).size.height * 0.05),
                         child: Text(
                           s.name,
-                          style: MyColors.customTextStyle(MyColors.grey, 16),
+                          style: Theme.of(context).textTheme.labelLarge,
                         ),
                       ),
                       AppTextField(
@@ -119,7 +116,7 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
                         margin: EdgeInsets.only(top: 10),
                         child: Text(
                           s.email,
-                          style: MyColors.customTextStyle(MyColors.grey, 16)
+                          style: Theme.of(context).textTheme.labelLarge,
                         ),
                       ),
                       AppTextField(
@@ -147,7 +144,7 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
                         margin: EdgeInsets.only(top: 10),
                         child: Text(
                           s.mobile,
-                          style: MyColors.customTextStyle(MyColors.grey, 16),
+                          style: Theme.of(context).textTheme.labelLarge,
                         ),
                       ),
                       AppTextField(
@@ -176,7 +173,7 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
                         margin: EdgeInsets.only(top: 10),
                         child: Text(
                           s.password,
-                          style: MyColors.customTextStyle(MyColors.grey, 16),
+                          style: Theme.of(context).textTheme.labelLarge,
                         ),
                       ),
                       AppTextField(
@@ -226,13 +223,13 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
                       SizedBox(height: 10),
                       Container(
                         margin: EdgeInsets.only(top: 15, bottom: 20),
-                        color: MyColors.grayLine,
+                        color: AppColors.grayLine,
                         height: 1,
                       ),
                       Center(
                         child: Text(
                           s.sign_up_with,
-                          style: MyColors.customTextStyle(MyColors.grey, 16)
+                          style: Theme.of(context).textTheme.labelLarge,
                         ),
                       ),
 
@@ -246,14 +243,14 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
                               height: 45,
                               decoration: BoxDecoration(
                                 border: Border.all(
-                                    color: MyColors.grayLine,
+                                    color: AppColors.grayLine,
                                     width: 1.0,
                                     style: BorderStyle.solid),
                                 borderRadius: BorderRadius.circular(10),
                                 // color: Colors.blue,
                               ),
                               child: Center(
-                                  child: Container(
+                                  child: SizedBox(
                                 height: 22,
                                 width: 22,
                                 child: Image.asset(Assets.assetsGoogle),
@@ -275,279 +272,3 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
             ])));
   }
 }
-
-// @override
-// Widget build(BuildContext context) {
-//   final authViewModel = Provider.of<AuthViewModel>(context);
-//   final height = MediaQuery.of(context).size.height * 1;
-//   return Scaffold(
-//       body: SafeArea(
-//           child: Container(
-//               height: MediaQuery.of(context).size.height,
-//               //  color: Colors.black,
-//               child: SingleChildScrollView(
-//                   child: Padding(
-//                       padding: EdgeInsets.fromLTRB(25, 30, 25, 10),
-//                       child: Column(
-//                           crossAxisAlignment: CrossAxisAlignment.start,
-//                           children: [
-//                             InkWell(
-//                               onTap: () {
-//                                 Navigator.pop(context);
-//                               },
-//                               child: Image.asset(
-//                                 Assets.assetsBack,
-//                                 height: 20,
-//                                 width: 20,
-//                               ),
-//                             ),
-//                             Container(
-//                               margin: EdgeInsets.only(
-//                                   top: MediaQuery.of(context).size.height *
-//                                       0.05),
-//                               child: Center(
-//                                 child: Column(
-//                                   crossAxisAlignment:
-//                                       CrossAxisAlignment.start,
-//                                   // mainAxisSize: MainAxisSize.min,
-//                                   //mainAxisAlignment: MainAxisAlignment.center,
-//                                   children: <Widget>[
-//                                     const Text(
-//                                       "Create an account",
-//                                       style: TextStyle(
-//                                           color: Colors.black,
-//                                           fontWeight: FontWeight.bold,
-//                                           fontSize: 26),
-//                                     ),
-//                                     Container(
-//                                       margin: EdgeInsets.only(top: 10),
-//                                       child: const Text(
-//                                         "Welcome to ExcelR, please enter your details to continue",
-//                                         style: TextStyle(
-//                                             color: Colors.grey, fontSize: 12),
-//                                       ),
-//                                     ),
-//                                      /// input field for name
-//                                     Container(
-//                                       margin: EdgeInsets.only(
-//                                           top: MediaQuery.of(context)
-//                                                   .size
-//                                                   .height *
-//                                               0.05),
-//                                       child: Text(
-//                                         'Name',
-//                                         style: TextStyle(
-//                                             color: Colors.grey,
-//                                             fontSize: 16,
-//                                             fontWeight: FontWeight.w400),
-//                                       ),
-//                                     ),
-//                                     AppTextField(
-//                                       textInputAction: TextInputAction.next,
-//                                       validator: (input) {},
-//                                       // maxLength: limitLength,
-//                                       //fieldKey: _phoneNoFieldKey,
-//                                       //hintText: 'Name',
-//                                       title: '',
-//                                       onSaved: (input) =>
-//                                           _phoneNo = input.toString(),
-//                                       onChanged: (input) {
-//                                         // if (Utility.isOnlyNumber(input.toString())) {
-//                                         //   limitLength = 10;
-//                                         // } else {
-//                                         //   limitLength = 40;
-//                                         // }
-//                                         setState(() {});
-//                                       },
-//                                     ),
-//                                     const SizedBox(
-//                                       height: 15,
-//                                     ),
-//                                      /// input field for email
-//                                     Container(
-//                                       margin: EdgeInsets.only(top: 10),
-//                                       child: Text(
-//                                         'Email',
-//                                         style: TextStyle(
-//                                             color: Colors.grey,
-//                                             fontSize: 16,
-//                                             fontWeight: FontWeight.w400),
-//                                       ),
-//                                     ),
-//                                     AppTextField(
-//                                       textInputAction: TextInputAction.next,
-//                                       validator: (input) {},
-//                                       // maxLength: limitLength,
-//                                       //fieldKey: _phoneNoFieldKey,
-//                                       // hintText: 'Email',
-//                                       onSaved: (input) =>
-//                                           _phoneNo = input.toString(),
-//                                       onChanged: (input) {
-//                                         // if (Utility.isOnlyNumber(input.toString())) {
-//                                         //   limitLength = 10;
-//                                         // } else {
-//                                         //   limitLength = 40;
-//                                         // }
-//                                         setState(() {});
-//                                       },
-//                                     ),
-//                                     const SizedBox(
-//                                       height: 15,
-//                                     ),
-
-//                                      /// input field for mobile
-//                                     Container(
-//                                       margin: EdgeInsets.only(top: 10),
-//                                       child: Text(
-//                                         'Mobile',
-//                                         style: TextStyle(
-//                                             color: Colors.grey,
-//                                             fontSize: 16,
-//                                             fontWeight: FontWeight.w400),
-//                                       ),
-//                                     ),
-//                                     AppTextField(
-//                                       textInputAction: TextInputAction.next,
-//                                       validator: (input) {},
-//                                       // maxLength: limitLength,
-//                                       //fieldKey: _phoneNoFieldKey,
-//                                       // hintText: 'Mobile',
-//                                       keyboardType: TextInputType.phone,
-//                                       onSaved: (input) =>
-//                                           _phoneNo = input.toString(),
-//                                       onChanged: (input) {
-//                                         // if (Utility.isOnlyNumber(input.toString())) {
-//                                         //   limitLength = 10;
-//                                         // } else {
-//                                         //   limitLength = 40;
-//                                         // }
-//                                         setState(() {});
-//                                       },
-//                                     ),
-//                                     const SizedBox(
-//                                       height: 15,
-//                                     ),
-//                                      /// input field for password
-//                                     Container(
-//                                       margin: EdgeInsets.only(top: 10),
-//                                       child: Text(
-//                                         'Password',
-//                                         style: TextStyle(
-//                                             color: Colors.grey,
-//                                             fontSize: 16,
-//                                             fontWeight: FontWeight.w400),
-//                                       ),
-//                                     ),
-//                                     AppTextField(
-//                                       textInputAction: TextInputAction.done,
-//                                       validator: (input) {
-//                                         // String? validatorString =
-//                                         //     Validation.passwordValidator(input, context);
-
-//                                         // if (validatorString.isNotEmpty) {
-//                                         //   return validatorString;
-//                                         // }
-//                                         // return null;
-//                                       },
-//                                       fieldKey: _passwordFieldKey,
-//                                       //  hintText: 'Password',
-//                                       obSecure: true,
-//                                       isPassword: true,
-//                                       onSaved: (input) =>
-//                                           _password = input.toString(),
-//                                     ),
-//                                     Container(
-//                                       margin: EdgeInsets.only(top: 40),
-//                                       child: RoundButton(
-//                                           title: 'Sign Up',
-//                                           loading: authViewModel.loading,
-//                                           onPressed: () {
-//                                             if (emailC.text.isEmpty) {
-//                                               Utils.flushBarError(
-//                                                   'please Enter email',
-//                                                   context);
-//                                             } else if (passwordC
-//                                                 .text.isEmpty) {
-//                                               Utils.flushBarError(
-//                                                   'please Enter password',
-//                                                   context);
-//                                             } else if (passwordC.text.length <
-//                                                 6) {
-//                                               Utils.flushBarError(
-//                                                   'password length is less than 5',
-//                                                   context);
-//                                             } else {
-//                                               Map data = {
-//                                                 "email": emailC.text,
-//                                                 "password": passwordC.text,
-//                                               };
-
-//                                               authViewModel.signUpApi(
-//                                                   data, context);
-//                                               authViewModel.setLoading(true);
-//                                               if (kDebugMode) {
-//                                                 print('Abi Hit');
-//                                               }
-//                                             }
-//                                           }),
-//                                     ),
-//                                     SizedBox(height: 10),
-//                                     Container(
-//                                       margin: EdgeInsets.only(
-//                                           top: 15, bottom: 20),
-//                                       color: AppColors.grayLine,
-//                                       height: 1,
-//                                     ),
-//                                     Center(
-//                                       child: Text(
-//                                         'or sign up with',
-//                                         style: TextStyle(
-//                                             color: Colors.grey,
-//                                             fontWeight: FontWeight.w400,
-//                                             fontSize: 16),
-//                                       ),
-//                                     ),
-
-//                                     Container(
-//                                       margin: EdgeInsets.only(top: 20),
-//                                       child: InkWell(
-//                                         onTap: () {
-//                                           print("Sign up click");
-//                                         },
-//                                         child: Container(
-//                                             height: 45,
-//                                             decoration: BoxDecoration(
-//                                               border: Border.all(
-//                                                   color: AppColors.grayLine,
-//                                                   width: 1.0,
-//                                                   style: BorderStyle.solid),
-//                                               borderRadius:
-//                                                   BorderRadius.circular(10),
-//                                               // color: Colors.blue,
-//                                             ),
-//                                             child: Center(
-//                                                 child: Container(
-//                                               height: 22,
-//                                               width: 22,
-//                                               child: Image.asset(Assets.assetsGoogle),
-//                                             ))),
-//                                       ),
-//                                     ),
-//                                     // TextButton(
-//                                     //     onPressed: () {
-//                                     //       Navigator.pushNamed(
-//                                     //           context, RoutesName.login);
-//                                     //     },
-//                                     //     child: Text(
-//                                     //         'Already have an Account? Login Here')
-//                                     //         )
-//                                   ],
-//                                 ),
-//                               ),
-//                             ),
-//                           ])
-//                           )
-//                           )
-//                           )
-//                           ));
-// }
