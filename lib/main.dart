@@ -6,7 +6,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'generated/l10n.dart';
 import 'res/components/LocalLang.dart';
-import 'routes/routes.dart';
+import 'utils/routes/routes.dart';
 import 'utils/routes/routes_name.dart';
 import 'view_model/auth_view_model.dart';
 import 'view_model/user_view_model.dart';

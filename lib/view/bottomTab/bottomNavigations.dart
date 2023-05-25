@@ -31,11 +31,11 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   int _selectedIndex = 0;
 
  final _pageOptions = [
-  Home(),
-  MyCourse(),
-  MessageScreen(),
-  NotificationScreen(),
-  Profile(),
+  const Home(),
+  const MyCourse(),
+  const MessageScreen(),
+  const NotificationScreen(),
+  const Profile(),
   ];
 
   void _onItemTapped(int index) {
@@ -47,12 +47,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
   @override
   Widget build(BuildContext context) {
-    //S str = S.of(context);
-  //  S str = S.of(context);
     return Scaffold(
-      // appBar: AppBar(
-      //   title: const Text('BottomNavigationBar Sample'),
-      // ),
       body: _pageOptions[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         items:  <BottomNavigationBarItem>[

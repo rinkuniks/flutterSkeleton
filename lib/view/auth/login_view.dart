@@ -116,7 +116,6 @@ class _LoginViewState extends BasePageState<LoginView> with Base {
                               // } else {
                               //   limitLength = 40;
                               // }
-                              setState(() {});
                             },
                           ),
                           const SizedBox(
@@ -161,7 +160,7 @@ class _LoginViewState extends BasePageState<LoginView> with Base {
                                       .setLocal(
                                     "en",
                                   ); */
-                                 Navigator.pushNamed(context, RoutesName.BottomNavi);
+                                 Navigator.pushNamed(context, RoutesName.bottomNavigation);
                                   // context.setLocale(Locale('hi'));
                                   //   Navigator.pushNamed(context, RoutesName.signUp);
                                   //  Navigator.pushNamed(context, RoutesName.videoPlayer);
