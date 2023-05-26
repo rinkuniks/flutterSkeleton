@@ -53,6 +53,7 @@ dependencies:
   flutter_login_facebook: 1.8.0
   sign_in_with_apple: 4.3.0
   crypto: 3.0.3
+  firebase_crashlytics: 3.3.1
   
 dev_dependencies:
   flutter_test:
