@@ -13,7 +13,7 @@ class AppColors {
   //Text Colors
   static const Color primaryTextColor = Color(0xFF3433F2);
   static const Color secondaryTextColor = Color(0xff000000);
-  static const Color tertiaryTextColor = Colors.green;
+  static const Color tertiaryTextColor = Colors.grey;
 
   //Button Colors
   static const Color primaryButtonColor = Color(0xFF3433F2);

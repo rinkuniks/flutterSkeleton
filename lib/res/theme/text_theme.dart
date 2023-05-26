@@ -5,42 +5,42 @@ class CustomTextTheme {
   static TextTheme lightTextTheme = const TextTheme(
     //black color
     titleSmall:  TextStyle(
-        color: AppColors.black,
+        color: AppColors.secondaryTextColor,
         fontSize: 14,
         fontFamily: 'SF-Pro-Display'),
     titleMedium:  TextStyle(
-        color: AppColors.black,
+        color: AppColors.secondaryTextColor,
         fontSize: 16,
         fontFamily: 'SF-Pro-Display'),
     titleLarge:  TextStyle(
-        color: AppColors.black,
+        color: AppColors.secondaryTextColor,
         fontSize: 20,
         fontFamily: 'SF-Pro-Display'),
     //Blue Color
     displaySmall:  TextStyle(
-        color: AppColors.blueText,
+        color: AppColors.primaryTextColor,
         fontSize: 14,
         fontFamily: 'SF-Pro-Display'),
     displayMedium:  TextStyle(
-        color: AppColors.blueText,
+        color: AppColors.primaryTextColor,
         fontSize: 16,
         fontFamily: 'SF-Pro-Display'),
     displayLarge:  TextStyle(
-        color: AppColors.blueText,
+        color: AppColors.primaryTextColor,
         fontSize: 40,
         fontFamily: 'SF-Pro-Display',
         fontWeight: FontWeight.w500),
     //grey Color
     labelSmall: TextStyle(
-        color: AppColors.grey,
+        color: AppColors.tertiaryTextColor,
         fontSize: 14,
         fontFamily: 'SF-Pro-Display'),
     labelMedium:  TextStyle(
-        color: AppColors.grey,
+        color: AppColors.tertiaryTextColor,
         fontSize: 16,
         fontFamily: 'SF-Pro-Display'),
     labelLarge:  TextStyle(
-        color: AppColors.grey,
+        color: AppColors.tertiaryTextColor,
         fontSize: 20,
         fontFamily: 'SF-Pro-Display',
         fontWeight: FontWeight.w500),
@@ -75,15 +75,15 @@ class CustomTextTheme {
         fontWeight: FontWeight.w500),
     //grey Color
     labelSmall: TextStyle(
-        color: AppColors.black,
+        color: AppColors.secondaryTextColor,
         fontSize: 14,
         fontFamily: 'SF-Pro-Display'),
     labelMedium:  TextStyle(
-        color: AppColors.black,
+        color: AppColors.secondaryTextColor,
         fontSize: 16,
         fontFamily: 'SF-Pro-Display'),
     labelLarge:  TextStyle(
-        color: AppColors.black,
+        color: AppColors.secondaryTextColor,
         fontSize: 20,
         fontFamily: 'SF-Pro-Display',
         fontWeight: FontWeight.w500),
