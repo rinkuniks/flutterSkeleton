@@ -39,7 +39,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   ];
 
   void _onItemTapped(int index) {
-    print(index);
     setState(() {
       _selectedIndex = index;
     });
@@ -83,8 +82,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         showSelectedLabels: true, // Selected labels hide/show
         showUnselectedLabels: true, // Unselected labels hide/show
         selectedItemColor: AppColors.blueText,
-      //  selectedItemColor: Colors.amber[800],
-      //  unselectedItemColor: Colors.black,
         onTap: _onItemTapped,
         type: BottomNavigationBarType.fixed, // Icons and labels animation  
       ),

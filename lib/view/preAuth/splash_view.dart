@@ -1,4 +1,3 @@
-import 'package:ExcelR/res/color.dart';
 import 'package:flutter/material.dart';
 import '../../base/base_page.dart';
 import '../../view_model/services/splash_services.dart';
@@ -16,7 +15,6 @@ class _SplashViewState extends BasePageState<SplashView> with Base{
   SplashServices splashServices = SplashServices();
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
    splashServices.checkAuthentication(context);
 

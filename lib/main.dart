@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'package:ExcelR/res/theme/theme.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +10,6 @@ import 'utils/routes/routes_name.dart';
 import 'view_model/auth_view_model.dart';
 import 'view_model/user_view_model.dart';
 
-//import 'package:firebase_core/firebase_core.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -47,6 +45,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return Consumer<LocalLang>(builder: (context, localLang, child) {
       return MaterialApp(
+        debugShowCheckedModeBanner: false,
         locale: localLang.local,
         localizationsDelegates: const [
           S.delegate,
@@ -58,9 +57,6 @@ class _MyAppState extends State<MyApp> {
         themeMode: ThemeMode.system,
         theme: AppTheme.lightTheme,
         darkTheme: AppTheme.darkTheme,
-        // themeMode: localLang.themeMode,
-        // theme: MyColors.themeData(false, context),
-        // darkTheme: MyColors.themeData(true, context),
         initialRoute: RoutesName.splash,
         onGenerateRoute: Routes.generateRoute,
       );

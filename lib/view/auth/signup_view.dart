@@ -1,9 +1,6 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import '../../base/base_page.dart';
 import '../../generated/assets.dart';
 import '../../generated/l10n.dart';
@@ -72,7 +69,7 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
     S s = S.of(context);
     return SingleChildScrollView(
         child: Padding(
-            padding: EdgeInsets.fromLTRB(25, 30, 25, 10),
+            padding: const EdgeInsets.fromLTRB(25, 30, 25, 10),
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               InkWell(
@@ -99,7 +96,7 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
                         style: Theme.of(context).textTheme.titleLarge,
                       ),
                       Container(
-                        margin: EdgeInsets.only(top: 10),
+                        margin: const EdgeInsets.only(top: 10),
                         child: Text(
                           s.welcome_to_excelR,
                           style: Theme.of(context).textTheme.labelLarge,
@@ -138,7 +135,7 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
 
                       /// input field for email
                       Container(
-                        margin: EdgeInsets.only(top: 10),
+                        margin: const EdgeInsets.only(top: 10),
                         child: Text(
                           s.email,
                           style: Theme.of(context).textTheme.labelLarge,
@@ -166,7 +163,7 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
 
                       /// input field for mobile
                       Container(
-                        margin: EdgeInsets.only(top: 10),
+                        margin: const EdgeInsets.only(top: 10),
                         child: Text(
                           s.mobile,
                           style: Theme.of(context).textTheme.labelLarge,
@@ -195,7 +192,7 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
 
                       /// input field for password
                       Container(
-                        margin: EdgeInsets.only(top: 10),
+                        margin: const EdgeInsets.only(top: 10),
                         child: Text(
                           s.password,
                           style: Theme.of(context).textTheme.labelLarge,
@@ -219,7 +216,7 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
                         onSaved: (input) => _password = input.toString(),
                       ),
                       Container(
-                        margin: EdgeInsets.only(top: 40),
+                        margin: const EdgeInsets.only(top: 40),
                         child: RoundButton(
                             title: s.sign_up,
                             // loading: authViewModel.loading,
@@ -245,9 +242,9 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
                               }
                             }),
                       ),
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
                       Container(
-                        margin: EdgeInsets.only(top: 15, bottom: 20),
+                        margin: const EdgeInsets.only(top: 15, bottom: 20),
                         color: AppColors.grayLine,
                         height: 1,
                       ),
@@ -259,7 +256,7 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
                       ),
 
                       Container(
-                        margin: EdgeInsets.only(top: 20),
+                        margin: const EdgeInsets.only(top: 20),
                         child: InkWell(
                           onTap: () {
                             socialLoginApiHandler(Constant.LOGIN_TYPE_GOOGLE);

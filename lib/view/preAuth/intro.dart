@@ -41,7 +41,6 @@ class IntroState extends BasePageState<Intro> with Base {
 
   @override
   bool isAppBarNeeded() {
-    // TODO: implement isAppBarNeeded
     return false;
   }
 
@@ -134,13 +133,12 @@ class Pages extends StatelessWidget {
   final text;
   // final color;
   final imgPath;
-  Pages({this.text, this.imgPath});
+  const Pages({super.key, this.text, this.imgPath});
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
     return Container(
-      //  color: color,
       margin: EdgeInsets.only(top: screenHeight * 0.04),
       child: Center(
         child: Column(
