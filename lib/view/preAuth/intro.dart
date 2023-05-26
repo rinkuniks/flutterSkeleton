@@ -1,11 +1,8 @@
+import 'package:ExcelR/res/color.dart';
 import 'package:flutter/material.dart';
-import 'package:mvvm/base/base_page.dart';
-import 'package:provider/provider.dart';
-
+import '../../base/base_page.dart';
 import '../../generated/assets.dart';
 import '../../generated/l10n.dart';
-import '../../res/appColors.dart';
-import '../../res/components/LocalLang.dart';
 import '../../res/components/round_button.dart';
 import '../../utils/routes/routes_name.dart';
 
@@ -20,8 +17,6 @@ class IntroState extends BasePageState<Intro> with Base {
   final PageController _pageController = PageController(initialPage: 0);
   int pageIndex = 0;
   int _activePage = 0;
-  bool isLight = false;
-  bool isEnglish = false;
 
   List<Widget> _list(BuildContext context) {
     S str = S.of(context);
@@ -46,7 +41,6 @@ class IntroState extends BasePageState<Intro> with Base {
 
   @override
   bool isAppBarNeeded() {
-    // TODO: implement isAppBarNeeded
     return false;
   }
 
@@ -61,7 +55,7 @@ class IntroState extends BasePageState<Intro> with Base {
           child: Center(
             child: Text(
               str.app_name,
-              style: MyColors.customTextStyleBold(MyColors.blueText, 42, FontWeight.w500),
+              style: Theme.of(context).textTheme.displayLarge
             ),
           ),
         ),
@@ -102,8 +96,8 @@ class IntroState extends BasePageState<Intro> with Base {
                       child: CircleAvatar(
                         radius: 7,
                         backgroundColor: _activePage == index
-                            ? MyColors.activeDot
-                            : MyColors.deActiveDot,
+                            ? AppColors.activeDot
+                            : AppColors.deActiveDot,
                       ),
                     ),
                   )),
@@ -130,61 +124,6 @@ class IntroState extends BasePageState<Intro> with Base {
                 Navigator.pushNamed(context, RoutesName.login);
               }),
         ),
-        Container(
-          margin: const EdgeInsets.only(right: 30, left: 30),
-          child:  Row(
-              children: <Widget>[
-                Flexible(
-                  flex: 1,
-                  child: Container(
-                    margin:
-                    EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.02, right: 5),
-                    child: RoundButton(
-                        title: isLight ? str.light_theme : str.dark_theme,
-                        bgColor: true,
-                        // loading: authViewModel.loading,
-                        onPressed: () {
-                          if(isLight == true){
-                            Provider.of<LocalLang>(context, listen: false)
-                                .setThemeMode(ThemeMode.light);
-                            isLight = false;
-                          }else{
-                            Provider.of<LocalLang>(context, listen: false)
-                                .setThemeMode(ThemeMode.dark);
-                            isLight = true;
-                          }
-                        }),
-                  ),
-                ),
-                Flexible(
-                  flex: 1,
-                  child: Container(
-                    margin:
-                    EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.02, left: 5),
-                    child: RoundButton(
-                        title: isEnglish ? str.english : str.hindi,
-                        bgColor: true,
-                        // loading: authViewModel.loading,
-                        onPressed: () {
-                          if(isEnglish == true){
-                            Provider.of<LocalLang>(context, listen: false)
-                                .setLocal(
-                              "en",
-                            );
-                            isEnglish = false;
-                          }else{
-                            Provider.of<LocalLang>(context, listen: false)
-                                .setLocal(
-                              "hi",
-                            );
-                            isEnglish = true;
-                          }
-                        }),
-                  ),
-                ),
-              ],
-            ),
-          ),
       ],
     );
   }
@@ -194,13 +133,12 @@ class Pages extends StatelessWidget {
   final text;
   // final color;
   final imgPath;
-  Pages({this.text, this.imgPath});
+  const Pages({super.key, this.text, this.imgPath});
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
     return Container(
-      //  color: color,
       margin: EdgeInsets.only(top: screenHeight * 0.04),
       child: Center(
         child: Column(
@@ -220,7 +158,7 @@ class Pages extends StatelessWidget {
                 child: Text(
                   text,
                   textAlign: TextAlign.center,
-                  style: MyColors.customTextStyleBold(MyColors.black, 20, FontWeight.w500)
+                  style: Theme.of(context).textTheme.titleMedium,
                 ),
               ),
             ]),

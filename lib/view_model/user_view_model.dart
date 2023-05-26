@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mvvm/model/user_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import '../model/user_model.dart';
 
 /// Created by Sawan Kumar on 12/05/23.
 

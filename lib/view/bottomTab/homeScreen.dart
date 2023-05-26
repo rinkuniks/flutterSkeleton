@@ -2,9 +2,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import '../../generated/assets.dart';
-import '../../res/appColors.dart';
+import '../../res/color.dart';
 
-class Home extends StatelessWidget  {
+class Home extends StatelessWidget {
   const Home({super.key});
 
   @override
@@ -36,17 +36,16 @@ class HomeView extends StatelessWidget {
     500,
   ];
 
-
   Home header = const Home();
- 
+
   HomeView({super.key}) {
     print("Testing constructions -------------------");
   }
 
   topCourse() {
-    return ( SingleChildScrollView(
+    return (const SingleChildScrollView(
       physics: ScrollPhysics(),
-      child:  Column(
+      child: Column(
         children: <Widget>[
           Text('Hey'),
         ],
@@ -54,20 +53,17 @@ class HomeView extends StatelessWidget {
     ));
   }
 
-    onIconTab(){
-if (kDebugMode) {
-  print("ty-------------------------");
-}
+  onIconTab() {
+    if (kDebugMode) {
+      print("====OnIconTab");
     }
+  }
 
   @override
   Widget build(BuildContext context) {
-    print("Testing constructions ----------4444444444444---------");
-
-
     return Scaffold(
       // arguments 1. Is background color true/ false , 2. background color , 3. app title, 4. left image, 5 Right image
-      
+
       body: SingleChildScrollView(
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           // Header.commonHeader(),
@@ -76,16 +72,14 @@ if (kDebugMode) {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                 Text(
+                Text(
                   "Hi, Bhavesh Raja",
-                  style: MyColors.customTextStyleBold(MyColors.black, 20, FontWeight.w500),
+                  style: Theme.of(context).textTheme.titleLarge,
                 ),
                 Row(
                   children: [
                     InkWell(
-                      onTap: () {
-                      
-                      },
+                      onTap: () {},
                       child: Container(
                         height: 20,
                         width: 20,
@@ -97,7 +91,7 @@ if (kDebugMode) {
                       child: SizedBox(
                         height: 20,
                         width: 20,
-                        child:SvgPicture.asset(Assets.assetsQuestionMark),
+                        child: SvgPicture.asset(Assets.assetsQuestionMark),
                       ),
                     ),
                   ],
@@ -109,9 +103,9 @@ if (kDebugMode) {
             padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
             child: Container(
               margin: const EdgeInsets.only(top: 0, bottom: 10),
-              child:  Text(
+              child: Text(
                 "Lorem ipsum dolor",
-                style: MyColors.customTextStyle(MyColors.grey, 14)
+                style: Theme.of(context).textTheme.titleSmall,
               ),
             ),
           ),
@@ -135,7 +129,7 @@ if (kDebugMode) {
                           const EdgeInsets.symmetric(horizontal: 15.0),
                       /* -- Text and Icon -- */
                       hintText: "Search...",
-                      hintStyle: MyColors.customTextStyle(const Color(0xFFB3B1B1), 18),
+                      hintStyle: Theme.of(context).textTheme.titleMedium,
                       /* -- Border Styling -- */
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(5.0),
@@ -143,7 +137,8 @@ if (kDebugMode) {
                           width: 0.5,
                           color: Color(0xFFFF0000),
                         ),
-                      ), // OutlineInputBorde
+                      ),
+                      // OutlineInputBorder
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(5.0),
                         borderSide: const BorderSide(
@@ -175,9 +170,9 @@ if (kDebugMode) {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                 Text(
+                const Text(
                   'Finish your profile to get premium\ncontent for free',
-                  style: MyColors.customTextStyle(const Color(0xffF8A848), 14),
+                  style: TextStyle(color: Color(0xffF8A848), fontSize: 14),
                 ),
                 SizedBox(
                     height: 20,
@@ -192,7 +187,7 @@ if (kDebugMode) {
               children: [
                 Text(
                   'Chose your other interests',
-                  style: MyColors.customTextStyleBold(MyColors.black, 14, FontWeight.bold),
+                  style: Theme.of(context).textTheme.titleLarge,
                 )
               ],
             ),
@@ -203,8 +198,8 @@ if (kDebugMode) {
               children: [
                 Container(
                   margin: const EdgeInsets.only(top: 10, bottom: 10),
-                  padding:
-                      const EdgeInsets.only(left: 20, top: 10, bottom: 10, right: 20),
+                  padding: const EdgeInsets.only(
+                      left: 20, top: 10, bottom: 10, right: 20),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
                     color: Colors.grey,
@@ -218,15 +213,14 @@ if (kDebugMode) {
                   child: Text(
                     'AI',
                     // textScaleFactor: 2,
-                    style: MyColors.customTextStyle(MyColors.black, 14),
+                    style: Theme.of(context).textTheme.titleMedium,
                   ),
                   // height: 50,
                 ),
                 Container(
-                  margin:
-                      const EdgeInsets.only(top: 10, left: 20, right: 20, bottom: 10),
-                  padding:
-                      const EdgeInsets.all(10),
+                  margin: const EdgeInsets.only(
+                      top: 10, left: 20, right: 20, bottom: 10),
+                  padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
                     color: const Color(0xff3433F2),
@@ -237,17 +231,17 @@ if (kDebugMode) {
                       ),
                     ],
                   ),
-                  child: Text(
+                  child: const Text(
                     'Machine Learning',
                     //  textScaleFactor: 2,
-                    style: MyColors.customTextStyle(MyColors.white, 14),
+                    style: TextStyle(color: AppColors.white, fontSize: 14),
                   ),
                   // height: 50,
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: 10, bottom: 10),
-                  padding:
-                      EdgeInsets.only(left: 10, top: 10, bottom: 10, right: 10),
+                  margin: const EdgeInsets.only(top: 10, bottom: 10),
+                  padding: const EdgeInsets.only(
+                      left: 10, top: 10, bottom: 10, right: 10),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
                     color: Colors.grey,
@@ -261,7 +255,7 @@ if (kDebugMode) {
                   child: Text(
                     'Python',
                     //  textScaleFactor: 2,
-                    style: MyColors.customTextStyle(MyColors.black, 14),
+                    style: Theme.of(context).textTheme.titleMedium,
                   ),
                   // height: 50,
                 ),
@@ -275,7 +269,8 @@ if (kDebugMode) {
             width: double.infinity,
           ),
           Padding(
-              padding: const EdgeInsets.fromLTRB(20, 15, 0, 15), child: topCourse())
+              padding: const EdgeInsets.fromLTRB(20, 15, 0, 15),
+              child: topCourse())
         ]),
       ),
     );

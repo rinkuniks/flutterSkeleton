@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mvvm/data/response/api_response.dart';
-import 'package:mvvm/model/movies_model.dart';
-import 'package:mvvm/respository/home_repository.dart';
+
+import '../data/response/api_response.dart';
+import '../model/movies_model.dart';
+import '../respository/home_repository.dart';
 
 /// Created by Sawan Kumar on 12/05/23.
 

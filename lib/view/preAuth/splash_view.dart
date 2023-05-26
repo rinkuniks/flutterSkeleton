@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-
 import '../../base/base_page.dart';
-import '../../res/appColors.dart';
-import '../../res/color.dart';
 import '../../view_model/services/splash_services.dart';
 
 /// Created by Sawan Kumar on 12/05/23.
@@ -18,9 +15,9 @@ class _SplashViewState extends BasePageState<SplashView> with Base{
   SplashServices splashServices = SplashServices();
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-    splashServices.checkAuthentication(context);
+   splashServices.checkAuthentication(context);
+
   }
 
   @override
@@ -29,15 +26,13 @@ class _SplashViewState extends BasePageState<SplashView> with Base{
     return false;
   }
 
-
   @override
   Widget body() {
-    return const Scaffold(
-      backgroundColor: Colors.white,
+    return Scaffold(
       body: Center(
           child: Text(
             'ExcelR',
-            style: AppColors.splashTextStyle,
+            style: Theme.of(context).textTheme.displayLarge
           )),
     );
   }

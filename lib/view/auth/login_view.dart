@@ -1,8 +1,5 @@
-
 import 'package:flutter/material.dart';
-import 'package:mvvm/res/appColors.dart';
 import 'package:provider/provider.dart';
-
 import '../../base/base_page.dart';
 import '../../generated/assets.dart';
 import '../../generated/l10n.dart';
@@ -81,14 +78,14 @@ class _LoginViewState extends BasePageState<LoginView> with Base {
                         children: [
                           Text(
                             s.welcome_back,
-                            style: MyColors.customTextStyleBold(MyColors.black, 20, FontWeight.w500)
+                            style: Theme.of(context).textTheme.titleLarge,
                           ),
                           Container(
                             margin: const EdgeInsets.only(top: 10),
                             child: Text(
                               s.welcome_to_excelR,
                               style:
-                                  MyColors.customTextStyle(MyColors.grey, 14),
+                              Theme.of(context).textTheme.labelLarge,
                             ),
                           ),
                           const SizedBox(
@@ -100,7 +97,7 @@ class _LoginViewState extends BasePageState<LoginView> with Base {
                             margin: const EdgeInsets.only(top: 10),
                             child: Text(
                               s.email,
-                              style: MyColors.customTextStyle(MyColors.grey, 16),
+                              style: Theme.of(context).textTheme.labelLarge
                             ),
                           ),
                           AppTextField(
@@ -118,7 +115,6 @@ class _LoginViewState extends BasePageState<LoginView> with Base {
                               // } else {
                               //   limitLength = 40;
                               // }
-                              setState(() {});
                             },
                           ),
                           const SizedBox(
@@ -130,7 +126,7 @@ class _LoginViewState extends BasePageState<LoginView> with Base {
                             margin: const EdgeInsets.only(top: 10),
                             child: Text(
                               s.password,
-                              style: MyColors.customTextStyle(MyColors.grey, 16)
+                              style: Theme.of(context).textTheme.labelLarge
                             ),
                           ),
 
@@ -163,7 +159,7 @@ class _LoginViewState extends BasePageState<LoginView> with Base {
                                       .setLocal(
                                     "en",
                                   ); */
-                                 Navigator.pushNamed(context, RoutesName.BottomNavi);
+                                 Navigator.pushNamed(context, RoutesName.bottomNavigation);
                                   // context.setLocale(Locale('hi'));
                                   //   Navigator.pushNamed(context, RoutesName.signUp);
                                   //  Navigator.pushNamed(context, RoutesName.videoPlayer);
@@ -185,7 +181,7 @@ class _LoginViewState extends BasePageState<LoginView> with Base {
                                 child: Text(
                                   s.forgot_password,
                                   textAlign: TextAlign.center,
-                                  style: MyColors.customTextStyle(MyColors.grey, 16),
+                                  style: Theme.of(context).textTheme.labelLarge
                                 ),
                               ),
                             ),

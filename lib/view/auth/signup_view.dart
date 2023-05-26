@@ -1,19 +1,11 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-
-import 'package:provider/provider.dart';
-
 import '../../base/base_page.dart';
 import '../../generated/assets.dart';
-
 import '../../generated/l10n.dart';
 import '../../provider/SocialLoginHelper.dart';
 import '../../provider/constant.dart';
-import '../../res/appColors.dart';
 import '../../res/color.dart';
 import '../../res/components/AppTextField.dart';
 import '../../res/components/round_button.dart';
@@ -77,7 +69,7 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
     S s = S.of(context);
     return SingleChildScrollView(
         child: Padding(
-            padding: EdgeInsets.fromLTRB(25, 30, 25, 10),
+            padding: const EdgeInsets.fromLTRB(25, 30, 25, 10),
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               InkWell(
@@ -101,13 +93,13 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
                     children: <Widget>[
                       Text(
                         s.create_an_account,
-                        style: MyColors.customTextStyleBold(MyColors.black, 20, FontWeight.w500)
+                        style: Theme.of(context).textTheme.titleLarge,
                       ),
                       Container(
-                        margin: EdgeInsets.only(top: 10),
+                        margin: const EdgeInsets.only(top: 10),
                         child: Text(
                           s.welcome_to_excelR,
-                          style: MyColors.customTextStyle(MyColors.grey, 14),
+                          style: Theme.of(context).textTheme.labelLarge,
                         ),
                       ),
 
@@ -117,7 +109,7 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
                             top: MediaQuery.of(context).size.height * 0.05),
                         child: Text(
                           s.name,
-                          style: MyColors.customTextStyle(MyColors.grey, 16),
+                          style: Theme.of(context).textTheme.labelLarge,
                         ),
                       ),
                       AppTextField(
@@ -143,10 +135,10 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
 
                       /// input field for email
                       Container(
-                        margin: EdgeInsets.only(top: 10),
+                        margin: const EdgeInsets.only(top: 10),
                         child: Text(
                           s.email,
-                          style: MyColors.customTextStyle(MyColors.grey, 16)
+                          style: Theme.of(context).textTheme.labelLarge,
                         ),
                       ),
                       AppTextField(
@@ -171,10 +163,10 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
 
                       /// input field for mobile
                       Container(
-                        margin: EdgeInsets.only(top: 10),
+                        margin: const EdgeInsets.only(top: 10),
                         child: Text(
                           s.mobile,
-                          style: MyColors.customTextStyle(MyColors.grey, 16),
+                          style: Theme.of(context).textTheme.labelLarge,
                         ),
                       ),
                       AppTextField(
@@ -200,10 +192,10 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
 
                       /// input field for password
                       Container(
-                        margin: EdgeInsets.only(top: 10),
+                        margin: const EdgeInsets.only(top: 10),
                         child: Text(
                           s.password,
-                          style: MyColors.customTextStyle(MyColors.grey, 16),
+                          style: Theme.of(context).textTheme.labelLarge,
                         ),
                       ),
                       AppTextField(
@@ -224,7 +216,7 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
                         onSaved: (input) => _password = input.toString(),
                       ),
                       Container(
-                        margin: EdgeInsets.only(top: 40),
+                        margin: const EdgeInsets.only(top: 40),
                         child: RoundButton(
                             title: s.sign_up,
                             // loading: authViewModel.loading,
@@ -250,21 +242,21 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
                               }
                             }),
                       ),
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
                       Container(
-                        margin: EdgeInsets.only(top: 15, bottom: 20),
-                        color: MyColors.grayLine,
+                        margin: const EdgeInsets.only(top: 15, bottom: 20),
+                        color: AppColors.grayLine,
                         height: 1,
                       ),
                       Center(
                         child: Text(
                           s.sign_up_with,
-                          style: MyColors.customTextStyle(MyColors.grey, 16)
+                          style: Theme.of(context).textTheme.labelLarge,
                         ),
                       ),
 
                       Container(
-                        margin: EdgeInsets.only(top: 20),
+                        margin: const EdgeInsets.only(top: 20),
                         child: InkWell(
                           onTap: () {
                             socialLoginApiHandler(Constant.LOGIN_TYPE_GOOGLE);
@@ -273,17 +265,17 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
                               height: 45,
                               decoration: BoxDecoration(
                                 border: Border.all(
-                                    color: MyColors.grayLine,
+                                    color: AppColors.grayLine,
                                     width: 1.0,
                                     style: BorderStyle.solid),
                                 borderRadius: BorderRadius.circular(10),
                                 // color: Colors.blue,
                               ),
                               child: Center(
-                                  child: Container(
-                               height: 20,
-                               width: 20,
-                                child:Image.asset(Assets.assetsGoogleIcon, ),
+                                  child: SizedBox(
+                                height: 22,
+                                width: 22,
+                                child: Image.asset(Assets.assetsGoogleIcon),
                               ))),
                         ),
                       ),

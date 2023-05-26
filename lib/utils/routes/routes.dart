@@ -1,60 +1,65 @@
 import 'package:flutter/material.dart';
-import 'package:mvvm/view/bottomTab/bottomNavigations.dart';
-import 'package:mvvm/view/bottomTab/homeScreen.dart';
-import 'package:mvvm/view/bottomTab/messageSereen.dart';
-import 'package:mvvm/view/bottomTab/myCoursesScreen.dart';
-import 'package:mvvm/view/bottomTab/notificationScreen.dart';
-import 'package:mvvm/view/bottomTab/profileScreen.dart';
-import 'package:mvvm/view/preAuth/splash_view.dart';
+
 import '../../res/components/videoPlayer.dart';
+import 'routes_name.dart';
 import '../../view/auth/login_view.dart';
 import '../../view/auth/signup_view.dart';
-import '../../view/dashboard/home_screen.dart';
+import '../../view/bottomTab/bottomNavigations.dart';
+import '../../view/bottomTab/homeScreen.dart';
+import '../../view/bottomTab/messageSereen.dart';
+import '../../view/bottomTab/myCoursesScreen.dart';
+import '../../view/bottomTab/notificationScreen.dart';
+import '../../view/bottomTab/profileScreen.dart';
 import '../../view/preAuth/intro.dart';
-import 'routes_name.dart';
+import '../../view/preAuth/splash_view.dart';
 
 /// Created by Sawan Kumar on 12/05/23.
 
-
 class Routes {
-  static Route<dynamic> generateRoute(RouteSettings settings) {
+  static MaterialPageRoute generateRoute(RouteSettings settings) {
     switch (settings.name) {
-      case RoutesName.homeMain:
-      return MaterialPageRoute(builder: (BuildContext context) => Home());
-       case RoutesName.my_courses:
-      return MaterialPageRoute(builder: (BuildContext context) => MyCourse());
-       case RoutesName.message:
-      return MaterialPageRoute(builder: (BuildContext context) => MessageScreen());
-       case RoutesName.notifications:
-      return MaterialPageRoute(builder: (BuildContext context) => NotificationScreen());
-       case RoutesName.profile:
-      return MaterialPageRoute(builder: (BuildContext context) => Profile());
-      case RoutesName.BottomNavi:
-      return MaterialPageRoute(builder:(BuildContext context) => BottomNavigation());
-      case RoutesName.videoPlayer:
-      return MaterialPageRoute(
-            builder: (BuildContext context) => const VideoPlayer());
-     
-       case RoutesName.intor:
-      return MaterialPageRoute(
-            builder: (BuildContext context) => const Intro());
+
+      //PreAuth
+      case RoutesName.intro:
+        return MaterialPageRoute(builder: (BuildContext context) => const Intro());
       case RoutesName.splash:
         return MaterialPageRoute(
             builder: (BuildContext context) => const SplashView());
-      case RoutesName.home:
-        return MaterialPageRoute(
-            builder: (BuildContext context) => const HomeScreen());
+
+      //Auth
       case RoutesName.login:
         return MaterialPageRoute(
             builder: (BuildContext context) => const LoginView());
       case RoutesName.signUp:
         return MaterialPageRoute(
             builder: (BuildContext context) => const SignUpView());
+
+      //Dashboard
+      case RoutesName.homeMain:
+        return MaterialPageRoute(builder: (BuildContext context) => const Home());
+      case RoutesName.myCourses:
+        return MaterialPageRoute(builder: (BuildContext context) => const MyCourse());
+      case RoutesName.message:
+        return MaterialPageRoute(
+            builder: (BuildContext context) => const MessageScreen());
+      case RoutesName.notifications:
+        return MaterialPageRoute(
+            builder: (BuildContext context) => const NotificationScreen());
+      case RoutesName.profile:
+        return MaterialPageRoute(builder: (BuildContext context) => const Profile());
+      case RoutesName.bottomNavigation:
+        return MaterialPageRoute(
+            builder: (BuildContext context) => const BottomNavigation());
+      case RoutesName.videoPlayer:
+        return MaterialPageRoute(
+            builder: (BuildContext context) => const VideoPlayer());
+
+    //Default Route
       default:
         return MaterialPageRoute(
             builder: (BuildContext context) => const Scaffold(
                   body: Center(
-                    child: Text('No Route found aa'),
+                    child: Text('No Route found...'),
                   ),
                 ));
     }

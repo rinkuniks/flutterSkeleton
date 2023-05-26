@@ -1,17 +1,15 @@
-import 'dart:developer';
+import 'package:ExcelR/res/theme/theme.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:mvvm/res/appColors.dart';
 import 'package:provider/provider.dart';
 import 'generated/l10n.dart';
 import 'res/components/LocalLang.dart';
-import 'routes/routes.dart';
+import 'utils/routes/routes.dart';
 import 'utils/routes/routes_name.dart';
 import 'view_model/auth_view_model.dart';
 import 'view_model/user_view_model.dart';
 
-//import 'package:firebase_core/firebase_core.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -47,6 +45,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return Consumer<LocalLang>(builder: (context, localLang, child) {
       return MaterialApp(
+        debugShowCheckedModeBanner: false,
         locale: localLang.local,
         localizationsDelegates: const [
           S.delegate,
@@ -55,9 +54,9 @@ class _MyAppState extends State<MyApp> {
           GlobalCupertinoLocalizations.delegate,
         ],
         supportedLocales: S.delegate.supportedLocales,
-        themeMode: localLang.themeMode,
-        theme: MyColors.themeData(false, context),
-        darkTheme: MyColors.themeData(true, context),
+        themeMode: ThemeMode.system,
+        theme: AppTheme.lightTheme,
+        darkTheme: AppTheme.darkTheme,
         initialRoute: RoutesName.splash,
         onGenerateRoute: Routes.generateRoute,
       );

@@ -1,10 +1,10 @@
 // ignore_for_file: use_build_context_synchronously
 
+import 'package:ExcelR/view_model/user_view_model.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:mvvm/model/user_model.dart';
-import 'package:mvvm/utils/routes/routes_name.dart';
-import 'package:mvvm/view_model/user_view_model.dart';
+import '../../model/user_model.dart';
+import '../../utils/routes/routes_name.dart';
 
 /// Created by Sawan Kumar on 12/05/23.
 
@@ -16,14 +16,14 @@ class SplashServices {
       if (value.token.toString() == null || value.token.toString() == '') {
         await Future.delayed(const Duration(seconds: 3));
         print("1111-----------------------------");
-        Navigator.pushNamed(context, RoutesName.intor);
+        Navigator.pushNamed(context, RoutesName.intro);
          //       Navigator.pushNamed(context, RoutesName.home);
 
       } else {
         await Future.delayed(const Duration(seconds: 3));
  print("1111-----------------------------2222");
 //  Navigator.pushNamed(context, RoutesName.home);
-        Navigator.pushNamed(context, RoutesName.intor);
+        Navigator.pushNamed(context, RoutesName.intro);
       }
     }).onError((error, stackTrace) {
       if (kDebugMode) {
