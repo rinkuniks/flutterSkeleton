@@ -21,7 +21,7 @@ class SignUpView extends BasePage {
 }
 
 class _SignUpViewState extends BasePageState<SignUpView> with Base {
-    SocialLoginHelper auth = SocialLoginHelper();
+  SocialLoginHelper auth = SocialLoginHelper();
 
   final ValueNotifier<bool> _obsecurePassword = ValueNotifier<bool>(true);
   TextEditingController emailC = TextEditingController();
@@ -46,17 +46,17 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
 
   socialLoginApiHandler(loginType) async {
     await FirebaseAuth.instance.signOut();
-    // if (loginType == Constant.LOGIN_TYPE_FACEBOOK) {
-    //   UserCredential? userCred = await auth.signInFB(context);
-
-    //   await loginApiHandler(Constant.LOGIN_TYPE_FACEBOOK, userCred);
-    //   // Utility.logInDebug("FINISHED");
-    // }
+    if (loginType == Constant.LOGIN_TYPE_FACEBOOK) {
+      UserCredential? userCred = await auth.signInFB(context);
+      print("---------------------------Facebook ${userCred}");
+      //   await loginApiHandler(Constant.LOGIN_TYPE_FACEBOOK, userCred);
+      // Utility.logInDebug("FINISHED");
+    }
     if (loginType == Constant.LOGIN_TYPE_GOOGLE) {
       UserCredential? userCred = await auth.signInWithGoogle(context);
-                print("---------------------------google login2 ${userCred}");
+      print("---------------------------google login2 ${userCred}");
 
-     // await loginApiHandler(Constant.LOGIN_TYPE_GOOGLE, userCred);
+      // await loginApiHandler(Constant.LOGIN_TYPE_GOOGLE, userCred);
     }
     // if (loginType == Constant.LOGIN_TYPE_APPLE) {
     //   UserCredential? userCred = await auth.signInWithApple(context);
@@ -66,7 +66,7 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
 
   @override
   Widget body() {
-    S s = S.of(context);
+    S str = S.of(context);
     return SingleChildScrollView(
         child: Padding(
             padding: const EdgeInsets.fromLTRB(25, 30, 25, 10),
@@ -92,14 +92,14 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
                     //mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Text(
-                        s.create_an_account,
+                        str.create_an_account,
                         style: Theme.of(context).textTheme.titleLarge,
                       ),
                       Container(
                         margin: const EdgeInsets.only(top: 10),
                         child: Text(
-                          s.welcome_to_excelR,
-                          style: Theme.of(context).textTheme.labelLarge,
+                          str.welcome_to_excelR,
+                          style: Theme.of(context).textTheme.labelSmall,
                         ),
                       ),
 
@@ -108,8 +108,8 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
                         margin: EdgeInsets.only(
                             top: MediaQuery.of(context).size.height * 0.05),
                         child: Text(
-                          s.name,
-                          style: Theme.of(context).textTheme.labelLarge,
+                          str.name,
+                          style: Theme.of(context).textTheme.labelMedium,
                         ),
                       ),
                       AppTextField(
@@ -137,8 +137,8 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
                       Container(
                         margin: const EdgeInsets.only(top: 10),
                         child: Text(
-                          s.email,
-                          style: Theme.of(context).textTheme.labelLarge,
+                          str.email,
+                          style: Theme.of(context).textTheme.labelMedium,
                         ),
                       ),
                       AppTextField(
@@ -165,8 +165,8 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
                       Container(
                         margin: const EdgeInsets.only(top: 10),
                         child: Text(
-                          s.mobile,
-                          style: Theme.of(context).textTheme.labelLarge,
+                          str.mobile,
+                          style: Theme.of(context).textTheme.labelMedium,
                         ),
                       ),
                       AppTextField(
@@ -194,8 +194,8 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
                       Container(
                         margin: const EdgeInsets.only(top: 10),
                         child: Text(
-                          s.password,
-                          style: Theme.of(context).textTheme.labelLarge,
+                          str.password,
+                          style: Theme.of(context).textTheme.labelMedium,
                         ),
                       ),
                       AppTextField(
@@ -218,7 +218,7 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
                       Container(
                         margin: const EdgeInsets.only(top: 40),
                         child: RoundButton(
-                            title: s.sign_up,
+                            title: str.sign_up,
                             // loading: authViewModel.loading,
                             onPressed: () {
                               if (emailC.text.isEmpty) {
@@ -250,8 +250,8 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
                       ),
                       Center(
                         child: Text(
-                          s.sign_up_with,
-                          style: Theme.of(context).textTheme.labelLarge,
+                          str.sign_up_with,
+                          style: Theme.of(context).textTheme.labelMedium,
                         ),
                       ),
 
@@ -279,6 +279,32 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
                               ))),
                         ),
                       ),
+
+                      // Container(
+                      //   margin: const EdgeInsets.only(top: 20),
+                      //   child: InkWell(
+                      //     onTap: () {
+                      //       socialLoginApiHandler(Constant.LOGIN_TYPE_FACEBOOK);
+                      //     },
+                      //     child: Container(
+                      //         height: 45,
+                      //         decoration: BoxDecoration(
+                      //           border: Border.all(
+                      //               color: AppColors.grayLine,
+                      //               width: 1.0,
+                      //               style: BorderStyle.solid),
+                      //           borderRadius: BorderRadius.circular(10),
+                      //           // color: Colors.blue,
+                      //         ),
+                      //         child: Center(
+                      //             child: SizedBox(
+                      //           height: 22,
+                      //           width: 22,
+                      //           child: Image.asset(Assets.assetsGoogleIcon),
+                      //         ))),
+                      //   ),
+                      // ),
+
                       // TextButton(
                       //     onPressed: () {
                       //       Navigator.pushNamed(

@@ -1,5 +1,8 @@
+import 'dart:ui';
+
 import 'package:ExcelR/res/theme/theme.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
@@ -10,9 +13,23 @@ import 'utils/routes/routes_name.dart';
 import 'view_model/auth_view_model.dart';
 import 'view_model/user_view_model.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+// void main() async {
+//   WidgetsFlutterBinding.ensureInitialized();
+//   FirebaseCrashlytics.instance.crash();
+
+//   await Firebase.initializeApp();
+//     FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
+Future<void> main() async {
+    WidgetsFlutterBinding.ensureInitialized();
+    await Firebase.initializeApp();
+    FlutterError.onError = (errorDetails) {
+      FirebaseCrashlytics.instance.recordFlutterFatalError(errorDetails);
+    };
+    // Pass all uncaught asynchronous errors that aren't handled by the Flutter framework to Crashlytics
+    PlatformDispatcher.instance.onError = (error, stack) {
+      FirebaseCrashlytics.instance.recordError(error, stack, fatal: true);
+      return true;
+    };
   runApp(
     MultiProvider(
       providers: [

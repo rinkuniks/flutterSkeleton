@@ -102,6 +102,7 @@ class IntroState extends BasePageState<Intro> with Base {
                     ),
                   )),
         ),
+      
         Container(
           margin:
               EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.1),

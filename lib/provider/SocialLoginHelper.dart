@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 
@@ -11,34 +12,34 @@ import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 
 class SocialLoginHelper {
 
-  // Future<UserCredential?> signInFB(BuildContext context) async {
-  //   UserCredential userCredential;
+  Future<UserCredential?> signInFB(BuildContext context) async {
+    UserCredential userCredential;
 
-  //   try {
-  //     await FirebaseAuth.instance.signOut();
-  //     Utility.logInDebug("FINISHED ");
+    try {
+      await FirebaseAuth.instance.signOut();
+     // Utility.logInDebug("FINISHED ");
 
-  //     final LoginResult loginResult = await FacebookAuth.instance.login();
+      final LoginResult loginResult = await FacebookAuth.instance.login();
 
-  //     // Create a credential from the access token
+      // Create a credential from the access token
 
-  //     final OAuthCredential facebookAuthCredential =
-  //         FacebookAuthProvider.credential(loginResult.accessToken!.token);
+      final OAuthCredential facebookAuthCredential =
+          FacebookAuthProvider.credential(loginResult.accessToken!.token);
 
-  //     // Once signed in, return the UserCredential
+      // Once signed in, return the UserCredential
 
-  //     userCredential = await FirebaseAuth.instance
-  //         .signInWithCredential(facebookAuthCredential);
+      userCredential = await FirebaseAuth.instance
+          .signInWithCredential(facebookAuthCredential);
 
 
-  //   } catch (e) {
-  //     errorHandle(context, e);
-  //     Utility.logInDebug("FINISHED 2 ${e.toString()}");
-  //     return null;
-  //   }
+    } catch (e) {
+      errorHandle(context, e);
+     // Utility.logInDebug("FINISHED 2 ${e.toString()}");
+      return null;
+    }
 
-  //   return userCredential;
-  // }
+    return userCredential;
+  }
 
   Future<UserCredential?> signInWithGoogle(BuildContext context) async {
     UserCredential userCredential;
@@ -119,11 +120,12 @@ class SocialLoginHelper {
 //     return digest.toString();
 //   }
 
-//   void errorHandle(BuildContext context, error) {
-//     try {
-//       Utility.logInDebug("error 123 $error");
-//       Utility.showSnackBarX(error.message, context);
-//     } catch (e) {}
-//   }
+  void errorHandle(BuildContext context, error) {
+    try {
+      print("error 123-------------------facebook ${error}");
+     // Utility.logInDebug("error 123 $error");
+      //Utility.showSnackBarX(error.message, context);
+    } catch (e) {}
+  }
 
 }

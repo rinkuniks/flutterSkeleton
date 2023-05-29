@@ -48,7 +48,7 @@ class _LoginViewState extends BasePageState<LoginView> with Base {
   Widget body() {
     final authViewModel = Provider.of<AuthViewModel>(context);
     final height = MediaQuery.of(context).size.height * 1;
-    S s = S.of(context);
+    S str = S.of(context);
     return SizedBox(
       height: MediaQuery.of(context).size.height,
       //  color: Colors.black,
@@ -77,15 +77,15 @@ class _LoginViewState extends BasePageState<LoginView> with Base {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            s.welcome_back,
+                            str.welcome_back,
                             style: Theme.of(context).textTheme.titleLarge,
                           ),
                           Container(
                             margin: const EdgeInsets.only(top: 10),
                             child: Text(
-                              s.welcome_to_excelR,
+                              str.welcome_to_excelR,
                               style:
-                              Theme.of(context).textTheme.labelLarge,
+                              Theme.of(context).textTheme.labelSmall,
                             ),
                           ),
                           const SizedBox(
@@ -96,8 +96,8 @@ class _LoginViewState extends BasePageState<LoginView> with Base {
                           Container(
                             margin: const EdgeInsets.only(top: 10),
                             child: Text(
-                              s.email,
-                              style: Theme.of(context).textTheme.labelLarge
+                              str.email,
+                              style: Theme.of(context).textTheme.labelMedium
                             ),
                           ),
                           AppTextField(
@@ -125,8 +125,8 @@ class _LoginViewState extends BasePageState<LoginView> with Base {
                           Container(
                             margin: const EdgeInsets.only(top: 10),
                             child: Text(
-                              s.password,
-                              style: Theme.of(context).textTheme.labelLarge
+                              str.password,
+                              style: Theme.of(context).textTheme.labelMedium
                             ),
                           ),
 
@@ -151,7 +151,7 @@ class _LoginViewState extends BasePageState<LoginView> with Base {
                             margin: EdgeInsets.only(
                                 top: MediaQuery.of(context).size.height * 0.05),
                             child: RoundButton(
-                                title: s.login,
+                                title: str.login,
                                 // bgColor: false,
                                 // loading: authViewModel.loading,
                                 onPressed: () {
@@ -179,9 +179,9 @@ class _LoginViewState extends BasePageState<LoginView> with Base {
                                       .setThemeMode(ThemeMode.dark);
                                 },
                                 child: Text(
-                                  s.forgot_password,
+                                  str.forgot_password,
                                   textAlign: TextAlign.center,
-                                  style: Theme.of(context).textTheme.labelLarge
+                                  style: Theme.of(context).textTheme.displayMedium
                                 ),
                               ),
                             ),

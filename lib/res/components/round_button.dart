@@ -19,6 +19,7 @@ class RoundButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Font family missing 
     return SizedBox(
         height: 40,
         width:  MediaQuery.of(context).size.width - 60,
@@ -35,7 +36,7 @@ class RoundButton extends StatelessWidget {
                 child: Text(
                   title,
                   style: const TextStyle(
-                    fontSize: 16,
+                    fontSize: 18,
                       color: AppColors.white),
                 ),
               ) 
@@ -51,7 +52,7 @@ class RoundButton extends StatelessWidget {
                 child: Text(
                   title,
                   style: const TextStyle(
-                    fontSize: 16,
+                    fontSize: 18,
                       color: AppColors.logInText),
                 ),
               )

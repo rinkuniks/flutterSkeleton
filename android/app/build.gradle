@@ -72,6 +72,8 @@ dependencies {
      implementation 'com.android.support:multidex:1.0.3'
     implementation 'com.google.firebase:firebase-crashlytics-ktx'
     implementation 'com.google.firebase:firebase-analytics-ktx'
+     implementation 'com.facebook.android:facebook-login:latest.release'
+
    // implementation 'com.google.firebase:firebase-analytics-ktx'
 }
 apply plugin: 'com.google.gms.google-services'

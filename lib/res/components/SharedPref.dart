@@ -10,7 +10,7 @@ class SharedPref {
 
   Future<String> getUser(String paramName) async {
     final SharedPreferences sp = await SharedPreferences.getInstance();
-    final String? id = sp.getString(paramName);
+    final String? id = sp.getString(paramName) != null ?  sp.getString(paramName) : 'en';
     return id!;
   }
 

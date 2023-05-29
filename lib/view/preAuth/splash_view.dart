@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../base/base_page.dart';
+import '../../generated/l10n.dart';
 import '../../view_model/services/splash_services.dart';
 
 /// Created by Sawan Kumar on 12/05/23.
@@ -28,10 +29,10 @@ class _SplashViewState extends BasePageState<SplashView> with Base{
 
   @override
   Widget body() {
+    S str = S.of(context);
     return Scaffold(
       body: Center(
-          child: Text(
-            'ExcelR',
+          child: Text(str.app_name,
             style: Theme.of(context).textTheme.displayLarge
           )),
     );
