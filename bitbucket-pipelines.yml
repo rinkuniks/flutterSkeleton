@@ -3,13 +3,21 @@
 # Only use spaces to indent your .yml configuration.
 # -----
 # You can specify a custom docker image from Docker Hub as your build environment.
-image: maven:3.6.3
-#image: node:16.12.0
+image: maven:3-openjdk-11
+clone:
+  depth: full
 pipelines:
-  default:
-    - step:
-        caches:
-          - node
-        script: # Modify the commands below to build your repository.
-          - mvn sonar:sonar #npm install -g sonarqube-scanner
-          - sonar-scanner -Dsonar.exclusions=**/ios/**,**android/**,*.java -Dsonar.projectKey=ExcelR-Mobileapp-Flutter -Dsonar.sources=. -Dsonar.host.url=https://sonarqube.affle.com -Dsonar.login=bd86728c044fa41117bbd0400a80f9722961e251
+  branches:
+    ‘{master}’: # or the name of your main branch
+      - step:
+          name: SonarQube analysis
+          caches:
+            - maven
+            - sonar
+          script:
+            - mvn verify sonar:sonar
+            - sonar-scanner -Dsonar.exclusions=**/ios/**,**android/**,*.java -Dsonar.projectKey=ExcelR-Mobileapp-Flutter -Dsonar.sources=. -Dsonar.host.url=https://sonarqube.affle.com 
+definitions:
+  caches:
+    sonar: ~/.sonar
+          
