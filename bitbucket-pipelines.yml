@@ -11,5 +11,5 @@ pipelines:
         caches:
           - node
         script: # Modify the commands below to build your repository.
-          - mvn ona:sonar #npm install -g sonarqube-scanner
+          - mvn sonar:sonar #npm install -g sonarqube-scanner
           - sonar-scanner -Dsonar.exclusions=**/ios/**,**android/**,*.java -Dsonar.projectKey=ExcelR-Mobileapp-Flutter -Dsonar.sources=. -Dsonar.host.url=https://sonarqube.affle.com -Dsonar.login=bd86728c044fa41117bbd0400a80f9722961e251
