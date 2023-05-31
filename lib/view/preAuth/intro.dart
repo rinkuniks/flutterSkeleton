@@ -1,8 +1,8 @@
-import 'package:ExcelR/res/color.dart';
 import 'package:flutter/material.dart';
 import '../../base/base_page.dart';
 import '../../generated/assets.dart';
 import '../../generated/l10n.dart';
+import '../../res/color.dart';
 import '../../res/components/round_button.dart';
 import '../../utils/routes/routes_name.dart';
 

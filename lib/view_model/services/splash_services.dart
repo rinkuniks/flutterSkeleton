@@ -1,10 +1,10 @@
 // ignore_for_file: use_build_context_synchronously
 
-import 'package:ExcelR/view_model/user_view_model.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import '../../model/user_model.dart';
 import '../../utils/routes/routes_name.dart';
+import '../user_view_model.dart';
 
 /// Created by Sawan Kumar on 12/05/23.
 

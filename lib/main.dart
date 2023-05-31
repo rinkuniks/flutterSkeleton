@@ -1,6 +1,5 @@
 import 'dart:ui';
 
-import 'package:ExcelR/res/theme/theme.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
@@ -8,6 +7,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'generated/l10n.dart';
 import 'res/components/LocalLang.dart';
+import 'res/theme/theme.dart';
 import 'utils/routes/routes.dart';
 import 'utils/routes/routes_name.dart';
 import 'view_model/auth_view_model.dart';

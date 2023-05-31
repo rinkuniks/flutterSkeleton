@@ -1,4 +1,4 @@
-# This is a sample build configuration for JavaScript.
+# cd ...
 # Check our guides at https://confluence.atlassian.com/x/14UWN for more examples.
 # Only use spaces to indent your .yml configuration.
 # -----
@@ -6,10 +6,16 @@
 image: node:16.12.0
 
 pipelines:
+  branches:
+    ‘{master}’: master # or the name of your main branch
   default:
     - step:
         caches:
           - node
         script: # Modify the commands below to build your repository.
           - npm install -g sonarqube-scanner
-          - sonar-scanner -Dsonar.exclusions=**/ios/**,**android/**,*.java -Dsonar.projectKey=ExcelR-Mobileapp-Flutter -Dsonar.sources=. -Dsonar.host.url=https://sonarqube.affle.com -Dsonar.login=bd86728c044fa41117bbd0400a80f9722961e251
+          - sonar-scanner -Dsonar.exclusions=**/ios/**,**android/**,*.java
+            -Dsonar.projectKey=ExcelR-Mobileapp-Flutter
+            -Dsonar.sources=.
+            -Dsonar.host.url=https://sonarqube.affle.com
+            -Dsonar.login=bd86728c044fa41117bbd0400a80f9722961e251
