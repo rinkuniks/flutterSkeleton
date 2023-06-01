@@ -10,6 +10,7 @@ class RoutesName {
   // Auth routes name
   static const String login = 'login_screen';
   static const String signUp = 'sign_up';
+  static const String onBoarding = 'onBoarding';
 
   // home screen routes name
   static const String home = 'home_screen';

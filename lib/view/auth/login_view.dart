@@ -4,7 +4,6 @@ import '../../base/base_page.dart';
 import '../../generated/assets.dart';
 import '../../generated/l10n.dart';
 import '../../res/components/AppTextField.dart';
-import '../../res/components/LocalLang.dart';
 import '../../res/components/round_button.dart';
 import '../../utils/routes/routes_name.dart';
 import '../../view_model/auth_view_model.dart';
@@ -155,7 +154,8 @@ class _LoginViewState extends BasePageState<LoginView> with Base {
                                 // bgColor: false,
                                 // loading: authViewModel.loading,
                                 onPressed: () {
-                                 Navigator.pushNamed(context, RoutesName.bottomNavigation);
+                                 // Navigator.pushNamed(context, RoutesName.bottomNavigation);
+                                 Navigator.pushNamed(context, RoutesName.onBoarding);
                                 }),
                           ),
                           Container(

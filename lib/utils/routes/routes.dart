@@ -1,3 +1,4 @@
+import 'package:ExcelR/view/auth/onBoarding.dart';
 import 'package:flutter/material.dart';
 
 import '../../res/components/videoPlayer.dart';
@@ -33,6 +34,9 @@ class Routes {
       case RoutesName.signUp:
         return MaterialPageRoute(
             builder: (BuildContext context) => const SignUpView());
+      case RoutesName.onBoarding:
+        return MaterialPageRoute(
+            builder: (BuildContext context) => const OnBoarding());
 
       //Dashboard
       case RoutesName.homeMain:
