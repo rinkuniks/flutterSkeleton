@@ -155,14 +155,7 @@ class _LoginViewState extends BasePageState<LoginView> with Base {
                                 // bgColor: false,
                                 // loading: authViewModel.loading,
                                 onPressed: () {
-                                  /*  Provider.of<LocalLang>(context, listen: false)
-                                      .setLocal(
-                                    "en",
-                                  ); */
                                  Navigator.pushNamed(context, RoutesName.bottomNavigation);
-                                  // context.setLocale(Locale('hi'));
-                                  //   Navigator.pushNamed(context, RoutesName.signUp);
-                                  //  Navigator.pushNamed(context, RoutesName.videoPlayer);
                                 }),
                           ),
                           Container(
@@ -170,14 +163,7 @@ class _LoginViewState extends BasePageState<LoginView> with Base {
                                 top: MediaQuery.of(context).size.height * 0.03),
                             child: Center(
                               child: InkWell(
-                                onTap: () {
-                                  // Provider.of<LocalLang>(context, listen: false)
-                                  //     .setLocal(
-                                  //   "hi",
-                                  // );
-                                  Provider.of<LocalLang>(context, listen: false)
-                                      .setThemeMode(ThemeMode.dark);
-                                },
+                                onTap: () {},
                                 child: Text(
                                   str.forgot_password,
                                   textAlign: TextAlign.center,

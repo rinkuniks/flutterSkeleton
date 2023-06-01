@@ -55,7 +55,6 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
     if (loginType == Constant.LOGIN_TYPE_GOOGLE) {
       UserCredential? userCred = await auth.signInWithGoogle(context);
       print("---------------------------google login2 ${userCred}");
-
       // await loginApiHandler(Constant.LOGIN_TYPE_GOOGLE, userCred);
     }
     // if (loginType == Constant.LOGIN_TYPE_APPLE) {
@@ -279,40 +278,6 @@ class _SignUpViewState extends BasePageState<SignUpView> with Base {
                               ))),
                         ),
                       ),
-
-                      // Container(
-                      //   margin: const EdgeInsets.only(top: 20),
-                      //   child: InkWell(
-                      //     onTap: () {
-                      //       socialLoginApiHandler(Constant.LOGIN_TYPE_FACEBOOK);
-                      //     },
-                      //     child: Container(
-                      //         height: 45,
-                      //         decoration: BoxDecoration(
-                      //           border: Border.all(
-                      //               color: AppColors.grayLine,
-                      //               width: 1.0,
-                      //               style: BorderStyle.solid),
-                      //           borderRadius: BorderRadius.circular(10),
-                      //           // color: Colors.blue,
-                      //         ),
-                      //         child: Center(
-                      //             child: SizedBox(
-                      //           height: 22,
-                      //           width: 22,
-                      //           child: Image.asset(Assets.assetsGoogleIcon),
-                      //         ))),
-                      //   ),
-                      // ),
-
-                      // TextButton(
-                      //     onPressed: () {
-                      //       Navigator.pushNamed(
-                      //           context, RoutesName.login);
-                      //     },
-                      //     child: Text(
-                      //         'Already have an Account? Login Here')
-                      //         )
                     ],
                   ),
                 ),

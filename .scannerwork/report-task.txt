@@ -2,5 +2,5 @@ projectKey=ExcelR-Mobileapp-Flutter
 serverUrl=https://sonarqube.affle.com
 serverVersion=9.2.4.50792
 dashboardUrl=https://sonarqube.affle.com/dashboard?id=ExcelR-Mobileapp-Flutter
-ceTaskId=AYhtBh4EeQWz7kUItSLq
-ceTaskUrl=https://sonarqube.affle.com/api/ce/task?id=AYhtBh4EeQWz7kUItSLq
+ceTaskId=AYhyAfHseQWz7kUItSL-
+ceTaskUrl=https://sonarqube.affle.com/api/ce/task?id=AYhyAfHseQWz7kUItSL-
