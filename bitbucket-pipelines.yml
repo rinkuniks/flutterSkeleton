@@ -20,4 +20,10 @@ pipelines:
             -Dsonar.sources=.
             -Dsonar.host.url=https://sonarqube.affle.com
             -Dsonar.login=bd86728c044fa41117bbd0400a80f9722961e251
-
+#docker run \
+#--rm \
+#-e SONAR_HOST_URL="http://${https://sonarqube.affle.com}" \
+#-e SONAR_SCANNER_OPTS="-Dsonar.projectKey=${bd86728c044fa41117bbd0400a80f9722961e251}" \
+#-e SONAR_TOKEN="37d22fbd9c7f4d46ef96dc33e27af4a2ce345e35" \
+#-v "${/Users/nikhilkumar/Desktop/Affle_Projects/excelr-mobileapp-flutter/lib}:/Users/nikhilkumar/Desktop/Affle_Projects/excelr-mobileapp-flutter/lib" \
+#sonarsource/sonar-scanner-cli
